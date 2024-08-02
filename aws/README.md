@@ -97,9 +97,10 @@ Ok now we are all set to prepare this system for Nodes :-)
 Copy the ubuntu install script to your new VM, logon to it and run the install script.
 
 ```
-cd nodes-devops/ubuntu/24,04
-scp -i ~/vopsDev/build/awskey-sydney.pem install.sh nodes@13.54.94.134:
+cd nodes-devops/ubuntu/24.04
+scp -i ~/vopsDev/build/awskey-sydney.pem install.sh arm64-mongo.sh nodes@13.54.94.134:
 ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.54.94.134
+./arm64-mongo.sh
 ./install.sh
 ```
 
@@ -157,6 +158,9 @@ sudo certbot --nginx --non-interactive --agree-tos --domains nodes.visualops.com
 It's that easy. Make sure you put YOUR domain and a valid email address in. Don't use mine :-)
 
 # download and install the binary builds 
+
+At this point, if your building a development machine, you can replace this section with the instructions for 
+building nodes from source. But continue for a binary only build (if there is one).
 
 You can find the latest builds in our github, and eventually they will be created according to the
 many platforms we might build for, but for now they are just for THIS specific platform in AWS.
