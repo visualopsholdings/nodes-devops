@@ -57,7 +57,7 @@ sudo adduser --disabled-password --gecos "" nodes
 sudo adduser nodes sudo
 ```
 
-Now make sure you can logon with the key your useing now:
+Now make sure you can logon with the key your using now:
 
 ```
 sudo cp -R .ssh /home/nodes
