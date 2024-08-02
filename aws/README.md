@@ -148,8 +148,7 @@ After this, I can access my server with:
 ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com
 ```
 
-Now to create a certificate, you need to first configure your NGINX instance, and then you can ask certbot to
-create you one.
+Now to create a certificate you can ask certbot to create you one.
 
 ```
 sudo certbot --nginx --non-interactive --agree-tos --domains nodes.visualops.com --email admin@visualops.com
