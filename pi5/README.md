@@ -71,6 +71,11 @@ And you can see the raspberry pi is at 192.168.0.156, so logon to it:
 ssh nodes@192.168.0.156
 ```
 
+The first thing you want to do is to prevent anybody hacking your noce new Pi image, so you can
+turn off password login and being able to login as root:
+
+Edit your config:
+
 ```
 nano /etc/ssh/sshd_config
 ```
