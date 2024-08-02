@@ -6,6 +6,8 @@
 	<array>
 		<string>C9E49194-0B1B-4AE4-88EB-08D5C4CCBE17</string>
 		<string>66A17492-2057-48DD-AD3E-8F133273EC09</string>
+		<string>D3CA25BA-2828-49C6-BBAD-DA2BDE8626F6</string>
+		<string>C4829FED-AEDF-46A4-B7E4-177415DA0066</string>
 	</array>
 	<key>ProjectItems</key>
 	<dict>
@@ -57,6 +59,50 @@
 			<key>UserOverrideItemName</key>
 			<true/>
 		</dict>
+		<key>C4829FED-AEDF-46A4-B7E4-177415DA0066</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va6wCAAAAAAQQMAAAAPhnlsUOT0S3cF4lmEYI7tY5
+				zfNX91q/ocYJXSlRo4KRqAEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAEAAAAAQEAAHBhdWwDAAAAAQEA
+				AERldgAGAAAAAQEAAHVidW50dQAAEAAAAAEGAAAQAAAA
+				IAAAACwAAAA4AAAACAAAAAQDAADYWgAAAAAAAAgAAAAE
+				AwAAvDIEAAAAAAAIAAAABAMAAEaDFgAAAAAACAAAAAQD
+				AADq8UoSAAAAABAAAAABBgAAYAAAAHAAAACAAAAAkAAA
+				AAgAAAAABAAAQcYuVGzDKbkYAAAAAQIAAAIAAAAAAAAA
+				DwAAAAAAAAAAAAAAAAAAAAgAAAAEAwAAAgAAAAAAAAAE
+				AAAAAwMAAPUBAAAIAAAAAQkAAGZpbGU6Ly8vDAAAAAEB
+				AABNYWNpbnRvc2ggSEQIAAAABAMAAACQgpbnAAAACAAA
+				AAAEAABBxfUErAAAACQAAAABAQAAQTE0RTlGMzgtQUNB
+				RC00RUZCLTk0Q0EtMzQ0NTcxRkU1QzY5GAAAAAECAACB
+				AAAAAQAAAO8TAAABAAAAAAAAAAAAAAABAAAAAQEAAC8A
+				AAAAAAAAAQUAAMwAAAD+////AQAAAAAAAAAQAAAABBAA
+				AEgAAAAAAAAABRAAAKAAAAAAAAAAEBAAAMgAAAAAAAAA
+				QBAAALgAAAAAAAAAAiAAAJQBAAAAAAAABSAAAAQBAAAA
+				AAAAECAAABQBAAAAAAAAESAAAEgBAAAAAAAAEiAAACgB
+				AAAAAAAAEyAAADgBAAAAAAAAICAAAHQBAAAAAAAAMCAA
+				AKABAAAAAAAAAcAAAOgAAAAAAAAAEcAAACAAAAAAAAAA
+				EsAAAPgAAAAAAAAAENAAAAQAAAAAAAAA
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/paul/Dev/nodes-devops/ubuntu/</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./ubuntu</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>ubuntu</string>
+			<key>ItemType</key>
+			<string>FolderReference</string>
+		</dict>
 		<key>C9E49194-0B1B-4AE4-88EB-08D5C4CCBE17</key>
 		<dict>
 			<key>ItemData</key>
@@ -104,6 +150,51 @@
 			<string>FileReference</string>
 			<key>UserOverrideItemName</key>
 			<true/>
+		</dict>
+		<key>D3CA25BA-2828-49C6-BBAD-DA2BDE8626F6</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va9QCAAAAAAQQMAAAAIEY1t6dNtLo/xkhCCmZrp/h
+				/9HkREK9/+OIf3s6KXJc0AEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAEAAAAAQEAAHBhdWwDAAAAAQEA
+				AERldgAMAAAAAQEAAG5vZGVzLWRldm9wcwMAAAABAQAA
+				YXdzABQAAAABBgAAEAAAACAAAAAsAAAAOAAAAEwAAAAI
+				AAAABAMAANhaAAAAAAAACAAAAAQDAAC8MgQAAAAAAAgA
+				AAAEAwAARoMWAAAAAAAIAAAABAMAAGmbShIAAAAACAAA
+				AAQDAABbn0oSAAAAABQAAAABBgAAdAAAAIQAAACUAAAA
+				pAAAALQAAAAIAAAAAAQAAEHGLkqUqWeDGAAAAAECAAAC
+				AAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMAAAMA
+				AAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxlOi8v
+				LwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAAkIKW
+				5wAAAAgAAAAABAAAQcX1BKwAAAAkAAAAAQEAAEExNEU5
+				RjM4LUFDQUQtNEVGQi05NENBLTM0NDU3MUZFNUM2ORgA
+				AAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAA
+				AAEBAAAvAAAAAAAAAAEFAADMAAAA/v///wEAAAAAAAAA
+				EAAAAAQQAABYAAAAAAAAAAUQAADEAAAAAAAAABAQAADw
+				AAAAAAAAAEAQAADgAAAAAAAAAAIgAAC8AQAAAAAAAAUg
+				AAAsAQAAAAAAABAgAAA8AQAAAAAAABEgAABwAQAAAAAA
+				ABIgAABQAQAAAAAAABMgAABgAQAAAAAAACAgAACcAQAA
+				AAAAADAgAADIAQAAAAAAAAHAAAAQAQAAAAAAABHAAAAg
+				AAAAAAAAABLAAAAgAQAAAAAAABDQAAAEAAAAAAAAAA==
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/paul/Dev/nodes-devops/aws/</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./aws</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>aws</string>
+			<key>ItemType</key>
+			<string>FolderReference</string>
 		</dict>
 	</dict>
 	<key>com.barebones.DocumentFormatVersion</key>
