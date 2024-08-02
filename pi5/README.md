@@ -5,6 +5,14 @@ PI 5.
 
 ## Create an SSH key on your computer
 
+If you already have an SSH key, then you can skip this. You can see if you have one with:
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+If not, do this:
+
 ```
 mkdir ~/.ssh
 sudo chmod 700 ~/.ssh
