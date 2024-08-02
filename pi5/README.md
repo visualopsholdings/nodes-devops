@@ -99,7 +99,7 @@ Ok now we are all set to prepare this system for Nodes :-)
 
 ## Installing our dependencies
 
-Copy the ubuntu install script to your new VM, logon to it and run the install script.
+Copy the ubuntu install script to your new Pi, logon to it and run the install script.
 
 ```
 cd nodes-devops/ubuntu/24.04

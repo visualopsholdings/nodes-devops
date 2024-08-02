@@ -1,5 +1,6 @@
 #!/bin/bash
 # 
+# setup repo for 64 bit mongodb on arm64
 
 # key and software list for mongodb
 echo "deb [ arch=arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
