@@ -120,5 +120,90 @@ To build from source, visit and build each of these projects:
 - https://github.com/visualopsholdings/nodes-irc
 - https://github.com/visualopsholdings/nodes-web
 
+## create the mongoDB database
+
+First create the user you will use to login to the DB.
+
+```
+mongosh << EOF
+use nodes
+db.createUser(
+    {
+      user: "nodes",
+      pwd: "nodes",
+      roles: [
+          { role: "readWrite", db: "nodes" }
+      ]
+    }
+)
+EOF
+```
+
+And then you can populate the DB with some initial data.
+
+```
+cd nodes/mongodb
+tar xzf initial.tgz
+./restore.sh
+cd ../..
+```
+
+## Setup your PI so you can do SSL
+
+This is a little complicated to do, but to simplify things we've made it possible to setup
+your pi so you can visit "pi.visualops.com" locally and get a valid certificate.
+
+On your network you need to make the name pi.visualops.com point to 192.168.0.156 (or whatever
+your PI is). For now we are just going to edit your /etc/hosts file and put an entry in it.
+
+```
+sudo nano /etc/hosts
+```
+
+And add this:
+
+```
+192.168.0.156  pi.visualops.com
+```
+
+Now you can install a certificate that matches that (it's supplied):
+
+```
+nodes-web/ssl/install-pi-cert.sh
+```
+
+## Start everything up
+
+You can now start them up:
+
+```
+nodes/scripts/start.sh nodes nodes pi.visualops.com
+nodes-web/scripts/start.sh
+nodes-irc/scripts/start.sh
+```
+
+## Hookup NGINX to Nodes stuff
+
+If you visit your domain with https://pi.visualops.com, you'll see a generic NGINX
+welcome banner.
+
+There are HTML files that are used by nodes, and the nodes program is a HTTP server itself running on
+port 3000 that is meant to be "proxied" by nginx.
+
+There are template files and a script inside the build that will create an appropriate NGINX config
+file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts it
+will use this config file.
+
+```
+nodes-web/scripts/nginxconf.sh pi.visualops.com 443 80
+```
+
+Or whatever your domain is.
+
+After this you can visit "nodes" on the web. To login, use the VID 
+
+```
+Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
+```
 
 
