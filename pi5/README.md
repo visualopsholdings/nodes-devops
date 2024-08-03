@@ -74,8 +74,8 @@ And you can see the raspberry pi is at 192.168.0.240, so logon to it:
 ssh nodes@192.168.0.240
 ```
 
-The first thing you want to do is to prevent anybody hacking your noce new Pi image, so you can
-turn off password login and being able to login as root:
+The first thing you want to do is to prevent anybody hacking your new Pi image, so you can
+turn off password login and login as root:
 
 Edit your config:
 
