@@ -209,7 +209,7 @@ file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts 
 will use this config file.
 
 ```
-nodes/scripts/nginxconf.sh nodes.visualops.com 443 80
+nodes-web/scripts/nginxconf.sh nodes.visualops.com 443 80
 ```
 
 Or whatever your domain is.
