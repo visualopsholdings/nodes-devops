@@ -1,4 +1,10 @@
 
+# Installing ZeroMQ tools from source
+
+This has been tested in Ubuntu 24.04
+- AWS T4G
+- Raspberry PI 4 and 5
+
 ```
 wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.19-stable.tar.gz  
 tar xzf libsodium-1.0.19-stable.tar.gz

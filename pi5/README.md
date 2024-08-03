@@ -3,6 +3,9 @@
 You can use these steps to setup a runtime (or development) system for Nodes on a Raspberry
 PI 5.
 
+Note that our code will work perfectly on a Pi4 BUT mongodb 7.0 which we use here crashes.
+That problem could be solved by using a different version of mongoDB just for a pi4.
+
 ## Create an SSH key on your computer
 
 If you already have an SSH key, then you can skip this. You can see if you have one with:
