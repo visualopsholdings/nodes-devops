@@ -56,8 +56,8 @@ Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
 192.168.0.18	82:f0:45:3c:c9:7f	(Unknown: locally administered)
 192.168.0.102	3c:a6:f6:8e:a3:69	Apple, Inc.
 192.168.0.239	30:de:4b:13:9e:1a	TP-Link Corporation Limited
-192.168.0.156	d8:3a:dd:cd:71:c9	Raspberry Pi Trading Ltd
-192.168.0.156	d8:3a:dd:cd:71:c9	Raspberry Pi Trading Ltd (DUP: 2)
+192.168.0.240	d8:3a:dd:cd:71:c9	Raspberry Pi Trading Ltd
+192.168.0.240	d8:3a:dd:cd:71:c9	Raspberry Pi Trading Ltd (DUP: 2)
 192.168.0.161	88:de:a9:74:a0:cf	Roku, Inc.
 192.168.0.34	8c:4b:14:e6:c3:00	Espressif Inc.
 
@@ -65,10 +65,10 @@ Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
 Ending arp-scan 1.10.0: 256 hosts scanned in 1.834 seconds (139.59 hosts/sec). 8 responded
 ```
 
-And you can see the raspberry pi is at 192.168.0.156, so logon to it:
+And you can see the raspberry pi is at 192.168.0.240, so logon to it:
 
 ```
-ssh nodes@192.168.0.156
+ssh nodes@192.168.0.240
 ```
 
 The first thing you want to do is to prevent anybody hacking your noce new Pi image, so you can
@@ -77,7 +77,7 @@ turn off password login and being able to login as root:
 Edit your config:
 
 ```
-nano /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
 ```
 
 Make these changes:
@@ -103,22 +103,29 @@ Copy the ubuntu install script to your new Pi, logon to it and run the install s
 
 ```
 cd nodes-devops/ubuntu/24.04
-scp install.sh arm64-mongo.sh nodes@192.168.0.156:
-ssh nodes@192.168.0.156
+scp install.sh arm64-mongo.sh nodes@192.168.0.240:
+ssh nodes@192.168.0.240
 ./arm64-mongo.sh
 ./install.sh
 ```
 
-## Download and build the projects
 
-At this point, if your building a development machine, you can replace this section with the instructions for 
-building nodes from source. But continue for a binary only build (if there is one).
+## Download and install the binary builds
 
-To build from source, visit and build each of these projects:
+You can find the latest builds in our github, and eventually they will be created according to the
+many platforms we might build for, but for now they are just for THIS specific platform in AWS.
 
-- https://github.com/visualopsholdings/nodes
-- https://github.com/visualopsholdings/nodes-irc
-- https://github.com/visualopsholdings/nodes-web
+```
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/pi-ubuntu-24_04.tgz
+tar xzf pi-ubuntu-24_04.tgz
+mv pi-ubuntu-24_04/nodes-lib .
+mv pi-ubuntu-24_04/nodes .
+mv pi-ubuntu-24_04/nodes-web .
+mv pi-ubuntu-24_04/nodes-irc .
+rm -rf pi-ubuntu-24_04*
+```
+
+That's it :-)
 
 ## create the mongoDB database
 
@@ -153,7 +160,7 @@ cd ../..
 This is a little complicated to do, but to simplify things we've made it possible to setup
 your pi so you can visit "pi.visualops.com" locally and get a valid certificate.
 
-On your network you need to make the name pi.visualops.com point to 192.168.0.156 (or whatever
+On your network you need to make the name pi.visualops.com point to 192.168.0.240 (or whatever
 your PI is). For now we are just going to edit your /etc/hosts file and put an entry in it.
 
 ```
@@ -163,7 +170,7 @@ sudo nano /etc/hosts
 And add this:
 
 ```
-192.168.0.156  pi.visualops.com
+192.168.0.240  pi.visualops.com
 ```
 
 Now you can install a certificate that matches that (it's supplied):

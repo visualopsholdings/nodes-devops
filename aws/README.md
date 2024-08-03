@@ -147,14 +147,13 @@ You can find the latest builds in our github, and eventually they will be create
 many platforms we might build for, but for now they are just for THIS specific platform in AWS.
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-irc.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-lib.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-web.tgz
-tar xzf nodes-irc.tgz 
-tar xzf nodes-web.tgz
-tar xzf nodes-lib.tgz 
-tar xzf nodes.tgz 
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/aws-tg4-ubuntu-24_04.tgz
+tar xzf aws-tg4-ubuntu-24_04.tgz
+mv aws-tg4-ubuntu-24_04/nodes-lib .
+mv aws-tg4-ubuntu-24_04/nodes .
+mv aws-tg4-ubuntu-24_04/nodes-web .
+mv aws-tg4-ubuntu-24_04/nodes-irc .
+rm -rf aws-tg4-ubuntu-24_04*
 ```
 
 That's it :-)

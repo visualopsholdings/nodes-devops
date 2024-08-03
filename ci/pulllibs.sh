@@ -8,11 +8,16 @@ HOST=$1
 KEY=$2
 ARCH=$3
 
+if [ "$KEY" != "none" ];
+then
+  CERT="-i $KEY"
+fi
+
 rm -rf $ARCH/nodes-lib
 mkdir $ARCH/nodes-lib
 
 get() {
-  scp -i $KEY $HOST:$1 $ARCH/$2
+  scp $CERT $HOST:$1 $ARCH/$2
 }
 
 getboost() {
