@@ -109,6 +109,16 @@ ssh nodes@192.168.0.156
 ./install.sh
 ```
 
+## Download and build the projects
+
+At this point, if your building a development machine, you can replace this section with the instructions for 
+building nodes from source. But continue for a binary only build (if there is one).
+
+To build from source, visit and build each of these projects:
+
+- https://github.com/visualopsholdings/nodes
+- https://github.com/visualopsholdings/nodes-irc
+- https://github.com/visualopsholdings/nodes-web
 
 
 

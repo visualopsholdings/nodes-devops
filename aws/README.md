@@ -104,7 +104,62 @@ ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.54.94.134
 ./install.sh
 ```
 
-# create the mongoDB database
+## setup a domain and a certificate for your server
+
+SSL is a necessary thing for Nodes. It is used by the Web and IRC interfaces and isn't optional.
+Luckily it's very easy to setup.
+
+In your domain name system (like GoDaddy etc), setup an A record to point a name to the address
+you received.
+
+So in our GoDaddy (visualops), I created an A record that said:
+
+A | nodes | 13.54.94.134 | 1/2 Hour TTL
+
+After this, I can access my server with:
+
+```
+ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com
+```
+
+Now to create a certificate you can ask certbot to create you one.
+
+```
+sudo certbot --nginx --non-interactive --agree-tos --domains nodes.visualops.com --email admin@visualops.com
+```
+
+It's that easy. Make sure you put YOUR domain and a valid email address in. Don't use mine :-)
+
+## Download and build the projects
+
+At this point, if your building a development machine, you can replace this section with the instructions for 
+building nodes from source. But continue for a binary only build (if there is one).
+
+To build from source, visit each of these projects:
+
+- https://github.com/visualopsholdings/nodes
+- https://github.com/visualopsholdings/nodes-irc
+- https://github.com/visualopsholdings/nodes-web
+
+## Download and install the binary builds
+
+You can find the latest builds in our github, and eventually they will be created according to the
+many platforms we might build for, but for now they are just for THIS specific platform in AWS.
+
+```
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-irc.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-lib.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-web.tgz
+tar xzf nodes-irc.tgz 
+tar xzf nodes-web.tgz
+tar xzf nodes-lib.tgz 
+tar xzf nodes.tgz 
+```
+
+That's it :-)
+
+## create the mongoDB database
 
 First create the user you will use to login to the DB.
 
@@ -131,52 +186,7 @@ tar xzf initial.tgz
 ./restore.sh
 ```
 
-# setup a domain and a certificate for your server
-
-SSL is a necessary thing for Nodes. It is used by the Web and IRC interfaces and isn't optional.
-Luckily it's very easy to setup.
-
-In your domain name system (like GoDaddy etc), setup an A record to point a name to the address
-you received.
-
-So in our GoDaddy (visualops), I created an A record that said:
-
-A | nodes | 13.54.94.134 | 1/2 Hour TTL
-
-After this, I can access my server with:
-
-```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com
-```
-
-Now to create a certificate you can ask certbot to create you one.
-
-```
-sudo certbot --nginx --non-interactive --agree-tos --domains nodes.visualops.com --email admin@visualops.com
-```
-
-It's that easy. Make sure you put YOUR domain and a valid email address in. Don't use mine :-)
-
-# download and install the binary builds 
-
-At this point, if your building a development machine, you can replace this section with the instructions for 
-building nodes from source. But continue for a binary only build (if there is one).
-
-You can find the latest builds in our github, and eventually they will be created according to the
-many platforms we might build for, but for now they are just for THIS specific platform in AWS.
-
-```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-irc.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-lib.tgz
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/nodes-web.tgz
-tar xzf nodes-irc.tgz 
-tar xzf nodes-web.tgz
-tar xzf nodes-lib.tgz 
-tar xzf nodes.tgz 
-```
-
-That's it :-)
+## Start everything up
 
 You can now start them up:
 
@@ -186,7 +196,7 @@ nodes-web/scripts/start.sh
 nodes-irc/scripts/start.sh
 ```
 
-# Hookup NGINX to Nodes stuff
+## Hookup NGINX to Nodes stuff
 
 If you visit your domain with https://nodes.visualops.com (or whatever yours is), you'll see a generic NGINX
 welcome banner.
