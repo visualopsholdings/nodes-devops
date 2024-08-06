@@ -12,6 +12,13 @@ which is probably the first one.
 
 Choose "64-bit (Arm)" as the architecture, and "t4g.small" as the size.
 
+You can also choose probably any architecture and size. We have tested the scripts below with
+
+- 64-bit (Arm), t4g.small
+- 64-bit (x86), t2.small
+
+Note! If your going to do development work on it (like compile C++ projects), then make it larger!
+
 Create yourself a new keypair, which you will use to login to the system when it's started. If 
 you've done this before in this zone, you can just choose your existing keypair.
 
@@ -32,7 +39,7 @@ Now choose the new allocated address (checkbox on left), and then on the "Action
 
 This new allocated address will be the address you will use to find your instance.
 
-My address for this document is "13.54.94.134".
+My address for this document is "13.236.72.83".
 
 ## Edit the port rules to allow IRC
 
@@ -55,10 +62,16 @@ You downloaded your keypair to a file on your hard drive. I downloaded mine to
 In your shell type this in:
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.54.94.134
+ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.236.72.83
 ```
 
 And your in :-)
+
+## Navigate to where our scripts are for Ubuntu
+
+```
+cd nodes-devops/ubuntu/24.04
+```
 
 ## Creating a new user
 
@@ -66,42 +79,30 @@ It's a really bad idea to just use the "ubuntu" or "root" or a predefined user f
 system. You want a brand new one. For all our scripts, our user is going to be "nodes".
 
 ```
-sudo adduser --disabled-password --gecos "" nodes
-sudo adduser nodes sudo
+scp -i ~/vopsDev/build/awskey-sydney.pem prep-user.sh ubuntu@13.236.72.83:
+ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.236.72.83 "prep-user.sh"
 ```
-
-Now make sure you can logon with the key your using now:
-
-```
-sudo cp -R .ssh /home/nodes
-sudo chown -R nodes:nodes /home/nodes/.ssh
-```
-
-And make sure you don't have to type a password when you type sudo:
-
-```
-echo "nodes ALL=(ALL) NOPASSWD:ALL" > nodes
-sudo mv nodes /etc/sudoers.d/
-sudo chown root:root /etc/sudoers.d/nodes
-```
-Now if you exit, you can connect to ssh using your new user:
-
-```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.54.94.134
-```
-
-Ok now we are all set to prepare this system for Nodes :-)
 
 ## Installing our dependencies
 
-Copy the ubuntu install script to your new VM, logon to it and run the install script.
+Copy the scripts over we need:
 
 ```
-cd nodes-devops/ubuntu/24.04
-scp -i ~/vopsDev/build/awskey-sydney.pem install.sh arm64-mongo.sh nodes@13.54.94.134:
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.54.94.134
-./arm64-mongo.sh
-./install.sh
+scp -i ~/vopsDev/build/awskey-sydney.pem *.sh ../../dev/*.sh nodes@13.236.72.83:
+```
+
+And run the initial scripts:
+
+For ARM:
+
+```
+ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.236.72.83 "./arm64-mongo.sh && ./install.sh"
+```
+
+Or for Intel:
+
+```
+ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.236.72.83 "./x86-mongo.sh && ./install.sh"
 ```
 
 ## setup a domain and a certificate for your server
@@ -114,7 +115,7 @@ you received.
 
 So in our GoDaddy (visualops), I created an A record that said:
 
-A | nodes | 13.54.94.134 | 1/2 Hour TTL
+A | nodes | 13.236.72.83 | 1/2 Hour TTL
 
 After this, I can access my server with:
 
@@ -156,33 +157,24 @@ mv aws-tg4-ubuntu-24_04/nodes-irc .
 rm -rf aws-tg4-ubuntu-24_04*
 ```
 
+Or for Intel
+
+```
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/aws-t2-ubuntu-24_04.tgz
+tar xzf aws-t2-ubuntu-24_04.tgz
+mv aws-t2-ubuntu-24_04/nodes-lib .
+mv aws-t2-ubuntu-24_04/nodes .
+mv aws-t2-ubuntu-24_04/nodes-web .
+mv aws-t2-ubuntu-24_04/nodes-irc .
+rm -rf aws-t2-ubuntu-24_04*
+```
+
 That's it :-)
 
 ## create the mongoDB database
 
-First create the user you will use to login to the DB.
-
 ```
-mongosh << EOF
-use nodes
-db.createUser(
-    {
-      user: "nodes",
-      pwd: "nodes",
-      roles: [
-          { role: "readWrite", db: "nodes" }
-      ]
-    }
-)
-EOF
-```
-
-And then you can populate the DB with some initial data.
-
-```
-cd nodes/mongodb
-tar xzf initial.tgz
-./restore.sh
+ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com "./mongo.sh"
 ```
 
 ## Start everything up

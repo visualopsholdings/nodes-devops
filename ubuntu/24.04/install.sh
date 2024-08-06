@@ -29,3 +29,6 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades -fnoninteractive
 
 # add nodes to the www-data group (for nginx)
 sudo gpasswd -a www-data nodes
+
+# here is where will put the deps.
+mkdir working

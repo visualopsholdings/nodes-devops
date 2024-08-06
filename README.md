@@ -18,7 +18,7 @@ The reason it is so large is because as a development system it has to build all
 and other tools and just takes that much CPU.
 
 These scripts and steps will obviously work on any CPU architecture (like ARM) but for 
-specifics we will outline how to build for Ubuntu 22.04, t4g.small, on ARM with 16GB of 
+specifics we will outline how to build for Ubuntu 22.04, (t4g/t2).small, on ARM or X86 with 16GB of 
 disk space.
 
 The scripts will copy binary files rather than do builds since our development system 

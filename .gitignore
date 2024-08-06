@@ -2,4 +2,4 @@
 ci/*.tgz
 ci/aws-tg4-ubuntu-24_04
 ci/pi-ubuntu-24_04
-
+ci/aws-t2-ubuntu-24_04
