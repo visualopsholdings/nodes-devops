@@ -32,7 +32,7 @@ su nodes
 ## Download THIS project and navigate to the ubuntu scripts.
 
 ```
-got clone https://github.com/visualopsholdings/nodes-devops
+git clone https://github.com/visualopsholdings/nodes-devops
 cd nodes-devops/ubuntu/24.04
 ```
 
@@ -41,7 +41,9 @@ cd nodes-devops/ubuntu/24.04
 You can install all the dependences with this command:
 
 ```
-./x86-mongo.sh && ./install.sh
+sudo apt-get -y install curl
+./x86-mongo.sh
+./install.sh
 ```
 
 ## Download and install the binary builds
@@ -66,7 +68,32 @@ That's it :-)
 ## create the mongoDB database
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com "./mongo.sh"
+./mongo.sh
+```
+
+## Setup your VM so you can do SSL
+
+This is a little complicated to do, but to simplify things we've made it possible to setup
+your VM so you can visit "pi.visualops.com" locally and get a valid certificate.
+
+On your network you need to make the name pi.visualops.com point to 192.168.0.240 (or whatever
+your PI is). For now we are just going to edit your /etc/hosts file and put an entry in it.
+
+Remember this is on the machines that you accessing your VM FROM. not the VM itself.
+```
+sudo nano /etc/hosts
+```
+
+And add this:
+
+```
+192.168.0.240  pi.visualops.com
+```
+
+Now you can install a certificate that matches that (it's supplied):
+
+```
+nodes-web/ssl/install-pi-cert.sh
 ```
 
 ## Start everything up
@@ -74,14 +101,14 @@ ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com "./mongo.sh"
 You can now start them up:
 
 ```
-nodes/scripts/start.sh nodes nodes nodes.visualops.com
+nodes/scripts/start.sh nodes nodes pi.visualops.com
 nodes-web/scripts/start.sh
 nodes-irc/scripts/start.sh
 ```
 
 ## Hookup NGINX to Nodes stuff
 
-If you visit your domain with https://nodes.visualops.com (or whatever yours is), you'll see a generic NGINX
+If you visit your domain with https://pi.visualops.com, you'll see a generic NGINX
 welcome banner.
 
 There are HTML files that are used by nodes, and the nodes program is a HTTP server itself running on
@@ -92,7 +119,7 @@ file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts 
 will use this config file.
 
 ```
-nodes-web/scripts/nginxconf.sh nodes.visualops.com 443 80
+nodes-web/scripts/nginxconf.sh pi.visualops.com 443 80
 ```
 
 Or whatever your domain is.
