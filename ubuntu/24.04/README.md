@@ -54,7 +54,7 @@ many platforms we might build for, but for now they are just for THIS specific p
 The "AWS-T2" build should run on any x86:
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/aws-t2-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.2/aws-t2-ubuntu-24_04.tgz
 tar xzf aws-t2-ubuntu-24_04.tgz
 mv aws-t2-ubuntu-24_04/nodes-lib .
 mv aws-t2-ubuntu-24_04/nodes .

@@ -119,7 +119,7 @@ You can find the latest builds in our github, and eventually they will be create
 many platforms we might build for, but for now they are just for THIS specific platform in AWS.
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.1/pi-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.2/pi-ubuntu-24_04.tgz
 tar xzf pi-ubuntu-24_04.tgz
 mv pi-ubuntu-24_04/nodes-lib .
 mv pi-ubuntu-24_04/nodes .
