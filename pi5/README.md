@@ -115,8 +115,10 @@ ssh nodes@192.168.0.240
 
 ## Download and install the binary builds
 
-You can find the latest builds in our github, and eventually they will be created according to the
-many platforms we might build for, but for now they are just for THIS specific platform in AWS.
+You can find the latest builds in our github:
+
+You could also build the projects from scratch ON your PI but you will need an 8GB PI to do this. These
+builds will happily run on a 2GB pi 5 (and even a 3 and 4 but we have yet to test that).
 
 ```
 wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.2/pi-ubuntu-24_04.tgz
