@@ -72,7 +72,8 @@ rm -rf aws-t2-ubuntu-24_04*
 
 That's it :-)
 
-OR, you can replace this step by downloading and building from source:
+It's possible that when you run one of the binaries you find that it's missing teh exact libraries
+for your slightly different Ubuntu version. If so, you can replace this step by downloading and building from source:
 
 - https://github.com/visualopsholdings/nodes
 - https://github.com/visualopsholdings/nodes-irc
