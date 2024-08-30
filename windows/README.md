@@ -5,10 +5,6 @@ machine.
 
 ## Prerequisits
 
-### Visual Studio Code
-
-You can get this from the Microsoft Store
-
 ### WSL
 
 Run Windows Powershell as Administrator and then run this:
@@ -40,26 +36,9 @@ You can now follow the instructions in:
 
 Just ignore the very first part about creating a user, since your user is already "nodes".
 
-### Github
+### Visual Studio Code
 
-Download and install the Github windows client. The easiest way to do this is to use a browser
-to navigate to https://github.com/apps/desktop and download from there.
+You can get this from the Microsoft Store, and then set it up so that it can be used
+to develop in teh Ubuntu you installed.
 
-I suggest that you create a "Dev" directory somewhere in your local user and use that to place
-the github repos that you use rather than taking the default which puts the repo in "OneDrive".
-Who knows what that would do!
-
-For example my repos are in "C:\Users\phamt\Dev".
-
-Clone the repos:
-
-- https://github.com/visualopsholdings/nodes-devops
-- https://github.com/visualopsholdings/nodes
-- https://github.com/visualopsholdings/nodes-irc
-- https://github.com/visualopsholdings/nodes-web
-
-After you clone a repo, you can choose the little dropdown and choose "Open in Visual Studio Code".
-
-You will be asked to install "CMake Tools" so go ahead and do that.
-
-
+https://code.visualstudio.com/docs/remote/wsl

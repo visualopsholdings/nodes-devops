@@ -15,3 +15,12 @@ cd ~
 git clone https://github.com/visualopsholdings/nodes-devops
 nodes-devops/dev/boost.sh
 ```
+
+Then:
+
+```
+# as root user
+sudo -s
+./b2 install threading=multi link=shared
+^C
+```
