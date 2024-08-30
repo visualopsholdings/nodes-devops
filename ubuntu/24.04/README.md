@@ -18,6 +18,11 @@ you happened to log into Ubuntu with:
 ```
 sudo adduser nodes
 sudo adduser nodes sudo
+```
+
+Now make it simpler so you don't have to type a password when you sudo.
+
+```
 echo "nodes ALL=(ALL) NOPASSWD:ALL" > nodes
 sudo mv nodes /etc/sudoers.d/
 sudo chown root:root /etc/sudoers.d/nodes

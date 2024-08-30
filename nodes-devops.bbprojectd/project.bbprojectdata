@@ -11,6 +11,7 @@
 		<string>BBBBB844-FEC2-4FDE-B05B-EB620BEBDAFF</string>
 		<string>28365AFB-ABC4-4119-BC7E-17986D4C5357</string>
 		<string>59666050-E7E5-4D7E-9056-81C7951DB695</string>
+		<string>F27EB930-695B-4A50-9A81-D74CEAA6E1DF</string>
 	</array>
 	<key>ProjectItems</key>
 	<dict>
@@ -331,6 +332,52 @@
 			</dict>
 			<key>ItemName</key>
 			<string>aws</string>
+			<key>ItemType</key>
+			<string>FolderReference</string>
+		</dict>
+		<key>F27EB930-695B-4A50-9A81-D74CEAA6E1DF</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va9gCAAAAAAQQMAAAAM5OgDZ6tyuosIrmjeuGn8Ne
+				oZvLeCgI1VMbK96j47ag1AEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAEAAAAAQEAAHBhdWwDAAAAAQEA
+				AERldgAMAAAAAQEAAG5vZGVzLWRldm9wcwcAAAABAQAA
+				d2luZG93cwAUAAAAAQYAABAAAAAgAAAALAAAADgAAABM
+				AAAACAAAAAQDAADYWgAAAAAAAAgAAAAEAwAAvDIEAAAA
+				AAAIAAAABAMAAEaDFgAAAAAACAAAAAQDAABpm0oSAAAA
+				AAgAAAAEAwAATLelEgAAAAAUAAAAAQYAAHgAAACIAAAA
+				mAAAAKgAAAC4AAAACAAAAAAEAABBxkDIS8YpthgAAAAB
+				AgAAAgAAAAAAAAAPAAAAAAAAAAAAAAAAAAAACAAAAAQD
+				AAADAAAAAAAAAAQAAAADAwAA9QEAAAgAAAABCQAAZmls
+				ZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAA
+				AJCClucAAAAIAAAAAAQAAEHGL8gGgAAAJAAAAAEBAABB
+				MTRFOUYzOC1BQ0FELTRFRkItOTRDQS0zNDQ1NzFGRTVD
+				NjkYAAAAAQIAAIEAAAABAAAA7xMAAAEAAAAAAAAAAAAA
+				AAEAAAABAQAALwAAAAAAAAABBQAAzAAAAP7///8BAAAA
+				AAAAABAAAAAEEAAAXAAAAAAAAAAFEAAAyAAAAAAAAAAQ
+				EAAA9AAAAAAAAABAEAAA5AAAAAAAAAACIAAAwAEAAAAA
+				AAAFIAAAMAEAAAAAAAAQIAAAQAEAAAAAAAARIAAAdAEA
+				AAAAAAASIAAAVAEAAAAAAAATIAAAZAEAAAAAAAAgIAAA
+				oAEAAAAAAAAwIAAAzAEAAAAAAAABwAAAFAEAAAAAAAAR
+				wAAAIAAAAAAAAAASwAAAJAEAAAAAAAAQ0AAABAAAAAAA
+				AAA=
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/paul/Dev/nodes-devops/windows/</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./windows</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>windows</string>
 			<key>ItemType</key>
 			<string>FolderReference</string>
 		</dict>
