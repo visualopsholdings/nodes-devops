@@ -72,6 +72,12 @@ rm -rf aws-t2-ubuntu-24_04*
 
 That's it :-)
 
+OR, you can replace this step by downloading and building from source:
+
+- https://github.com/visualopsholdings/nodes
+- https://github.com/visualopsholdings/nodes-irc
+- https://github.com/visualopsholdings/nodes-web
+
 ## create the mongoDB database
 
 ```
