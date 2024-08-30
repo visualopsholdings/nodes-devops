@@ -6,14 +6,14 @@ You can use these steps to setup a runtime (or development) system for Nodes in 
 
 Install Ubuntu on a VM, or on a machine.
 
-This has been tested on an x86 VM in VirtualBox with the Ubuntu:
-
-TBD
+This has been tested in the WSL (Subsystem for Linux) on windows.
 
 ## Create a user
 
 It is convenient for you to create a "nodes" user and use that rather than whatever user
 you happened to log into Ubuntu with:
+
+If you actually used the user named "nodes", then you can ignore this step.
 
 ```
 sudo adduser nodes
@@ -28,7 +28,8 @@ sudo mv nodes /etc/sudoers.d/
 sudo chown root:root /etc/sudoers.d/nodes
 ```
 
-After this, you can either log onto your nodes user, or before executing scripts for nodes, type in
+After this, you can either log onto your nodes user, or before executing scripts for nodes, type in (
+if your not alreaady user "nodes")
 
 ```
 su nodes
@@ -59,7 +60,8 @@ many platforms we might build for, but for now they are just for THIS specific p
 The "AWS-T2" build should run on any x86:
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.0.2/aws-t2-ubuntu-24_04.tgz
+cd ~
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/aws-t2-ubuntu-24_04.tgz
 tar xzf aws-t2-ubuntu-24_04.tgz
 mv aws-t2-ubuntu-24_04/nodes-lib .
 mv aws-t2-ubuntu-24_04/nodes .
