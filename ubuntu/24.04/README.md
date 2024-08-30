@@ -81,7 +81,16 @@ for your slightly different Ubuntu version. If so, you can replace this step by 
 
 ## create the mongoDB database
 
+The scripts used to create this mongo db database are in "nodes/mondogb", so make sure to clone
+that repo first.
+
 ```
+cd ~
+git clone https://github.com/visualopsholdings/nodes
+```
+
+```
+cd nodes-devops/ubuntu/24.04
 ./mongo.sh
 ```
 

@@ -32,7 +32,7 @@ When you finally run it, choose "nodes" as the username and password.
 
 You can now follow the instructions in:
 
-[Setting up for Ubuntu 24.02](../ubuntu/24.04/README.md)
+[Setting up for Ubuntu 24.04](../ubuntu/24.04/README.md)
 
 Just ignore the very first part about creating a user, since your user is already "nodes".
 

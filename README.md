@@ -32,9 +32,9 @@ machine using binary artifacts.
 
 [Setting up for Raspberry PI 5](pi5/README.md)
 
-[Setting up for Ubuntu 24.02](ubuntu/24.04/README.md)
+[Setting up for Ubuntu 24.04](ubuntu/24.04/README.md)
 
-[Setting up for Ubuntu 24.02 but in Windows](windows/README.md)
+[Setting up for Ubuntu 24.04 but in Windows](windows/README.md)
 
 To setup a development system, use the above first and then follow the steps in the github repo
 to install the various sources for the dependencies.
