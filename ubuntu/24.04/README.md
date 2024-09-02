@@ -52,6 +52,8 @@ sudo apt-get -y install curl
 ./install.sh
 ```
 
+Use "arm64-mongo.sh" if your on ARM.
+
 ## Download and install the binary builds
 
 You can find the latest builds in our github, and eventually they will be created according to the
