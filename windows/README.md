@@ -42,3 +42,19 @@ You can get this from the Microsoft Store, and then set it up so that it can be 
 to develop in teh Ubuntu you installed.
 
 https://code.visualstudio.com/docs/remote/wsl
+
+### MongoDB
+
+Download and install MongoDB for windows:
+
+https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.14-signed.msi
+
+Just double click on the downloade MSI to run the installer.
+
+Use "Complete" and take the defaults for how to set it up a service. Install "Compass"
+as well because it's really useful.
+
+The installed mongodb from our instructions doesn't work from inside WSL, BUT 
+thr mongosh does, so you install mongodb externally in windows itself and then we will 
+explain how to do the mongo steps we need here on the MongoDB which is actually
+running external to WSL.
