@@ -136,3 +136,15 @@ And then restore it into the DB in Windows:
 cd 'C:\Program Files\MongoDB\Server\7.0\bin'
 ./mongorestore --username=nodes --password=nodes --db=nodes --drop \\wsl.localhost\Ubuntu-22.04\home\nodes\nodes\mongodb\dump\fiveEstellas
 ```
+
+### Node is too old
+
+To use the build tools in nodes-web, you will need a later version of node, which you can get 
+here:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+. ~/.bashrc
+nvm install v16.14
+```
+
