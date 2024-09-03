@@ -109,6 +109,9 @@ for your slightly different Ubuntu version. If so, you can replace this step by 
 - https://github.com/visualopsholdings/nodes-irc
 - https://github.com/visualopsholdings/nodes-web
 
+Note that it's best to at least start out with the binaries since you will get it all going much
+faster :-)
+
 ### MongoDB
 
 Download and install MongoDB for windows:
@@ -196,6 +199,12 @@ And then restore it into the DB in Windows:
 ```
 cd 'C:\Program Files\MongoDB\Server\7.0\bin'
 ./mongorestore --username=nodes --password=nodes --db=nodes --drop \\wsl.localhost\Ubuntu-22.04\home\nodes\nodes\mongodb\dump\fiveEstellas
+```
+
+Conveniently, you can get to your WSL data from windows at this path (as seen above):
+
+```
+\\wsl.localhost\Ubuntu-22.04\home\nodes
 ```
 
 ### Windows Firewall
