@@ -39,18 +39,75 @@ https://superuser.com/questions/1748953/cannot-run-wsl-on-acer-5-2022
 
 When you finally run it, choose "nodes" as the username and password.
 
-You can now follow the instructions in:
-
-[Setting up for Ubuntu 24.04](../ubuntu/24.04/README.md)
-
-Just ignore the very first part about creating a user, since your user is already "nodes".
-
 ### Visual Studio Code
 
 You can get this from the Microsoft Store, and then set it up so that it can be used
-to develop in teh Ubuntu you installed.
+to develop in the Ubuntu you installed.
 
 https://code.visualstudio.com/docs/remote/wsl
+
+After this is installed, you can conveniently connect to the WSL and use the terminal
+to do the remaining steps.
+
+## Setup your user for sudo
+
+Now make it simpler so you don't have to type a password when you sudo.
+
+```
+echo "nodes ALL=(ALL) NOPASSWD:ALL" > nodes
+sudo mv nodes /etc/sudoers.d/
+sudo chown root:root /etc/sudoers.d/nodes
+```
+
+## Download THIS project and navigate to the ubuntu scripts.
+
+```
+git clone https://github.com/visualopsholdings/nodes-devops
+cd nodes-devops/ubuntu/24.04
+```
+
+## Installing our dependencies
+
+You can install all the dependences with this command:
+
+```
+./install-nomongo.sh
+```
+
+### Node is too old
+
+To use the build tools in nodes-web (for a full build), you will need a later version of node, which you can get here:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+. ~/.bashrc
+nvm install v16.14
+```
+
+
+## Download and install the binary builds
+
+You can find the latest builds in our github.
+
+```
+cd ~
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/wsl-ubuntu-24_04.tgz
+tar xzf wsl-ubuntu-24_04.tgz
+mv wsl-ubuntu-24_04/nodes-lib .
+mv wsl-ubuntu-24_04/nodes .
+mv wsl-ubuntu-24_04/nodes-web .
+mv wsl-ubuntu-24_04/nodes-irc .
+rm -rf wsl-ubuntu-24_04*
+```
+
+That's it :-)
+
+It's possible that when you run one of the binaries you find that it's missing the exact libraries
+for your slightly different Ubuntu version. If so, you can replace this step by downloading and building from source:
+
+- https://github.com/visualopsholdings/nodes
+- https://github.com/visualopsholdings/nodes-irc
+- https://github.com/visualopsholdings/nodes-web
 
 ### MongoDB
 
@@ -79,15 +136,15 @@ machine:
 ip route show | grep -i default | awk '{ print $3}'
 ```
 
-For example, this might return "172.30.192.1"
+For example, this might return "10.0.0.27"
 
-Now edit this file with a text editor:
+Now edit this file with visual studio:
 
 ```
 C:\\Program Files\MongoDB\Server\7.0\bin\mongod.cfg
 ```
 
-Find "bindIp: 127.0.0.1" and change it to "bindIp: 172.30.192.1"
+Find "bindIp: 127.0.0.1" and change it to "bindIp: 10.0.0.27"
 
 Now restart MongoDB using the windows powershell as Admin:
 
@@ -95,12 +152,16 @@ Now restart MongoDB using the windows powershell as Admin:
 start-process powershell -verb runas
 ```
 
+This will create a new "blue" powershell.
+
 Inside this you can stop and start MongoDB:
 
 ```
 net stop MongoDB
 net start MongoDB
 ```
+
+#### Populate MongoDB
 
 Run "Compass" and down the bottom there is a dark blue window you can expand that gives you
 direct access to the mongo shell. 
@@ -137,14 +198,80 @@ cd 'C:\Program Files\MongoDB\Server\7.0\bin'
 ./mongorestore --username=nodes --password=nodes --db=nodes --drop \\wsl.localhost\Ubuntu-22.04\home\nodes\nodes\mongodb\dump\fiveEstellas
 ```
 
-### Node is too old
+### Windows Firewall
 
-To use the build tools in nodes-web, you will need a later version of node, which you can get 
-here:
+You will need to turn the firewall off (public) or add port 27017 as an exception in
+the advanced settings.
+
+### NgINX
+
+Now that everything starts up, you want to be able to access nodes from the browser and there
+are a few steps still to do.
+
+You will want to set it up so that you can type "https://pi.visualops.com" in your local
+browser and it will access the web server with a certificate and do SSL.
+
+Find the IP address of your WSL:
 
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-. ~/.bashrc
-nvm install v16.14
+ifconfig
 ```
 
+Which might return:
+
+```
+...
+inet 172.20.69.63
+...
+```
+
+Now edit this file with Visual Studio:
+
+```
+C:\Windows\System32\drivers\etc\hosts
+```
+
+And type in a line at the end like this:
+
+```
+172.20.69.63 pi.visualops.com
+```
+
+We ship with a certificate (from letsencrypt) for pi.visualops.com which you can install with:
+
+```
+nodes-web/ssl/install-pi-cert.sh
+```
+
+You can now create a config for nginx like this:
+
+```
+nodes-web/scripts/nginxconf.sh pi.visualops.com 443 80
+```
+
+And now you can startup nodes and nodes-web like this:
+
+```
+nodes/scripts/start.sh nodes nodes pi.visualops.com 10.0.0.27
+nodes-web/scripts/start.sh
+```
+
+10.0.0.27 is the address where you can find MongoDB.
+
+Now startup NGINX:
+
+```
+sudo nginx
+```
+
+You can stop it with this:
+
+```
+sudo nginx -s stop
+```
+
+After this you can visit "nodes" on the web with https://pi.visualops.com. To login, use the VID 
+
+```
+Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
+```
