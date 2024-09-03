@@ -187,14 +187,14 @@ db.createUser(
 )
 ```
 
-Extract the initial DB contents inside WSL:
+Extract the initial DB contents inside WSL (so in the terminal in Visual Studio):
 
 ```
 cd nodes/mongodb
 tar xzf initial.tgz
 ```
 
-And then restore it into the DB in Windows:
+And then restore it into the DB in Windows (so in the powershell or command prompt in Windows):
 
 ```
 cd 'C:\Program Files\MongoDB\Server\7.0\bin'
