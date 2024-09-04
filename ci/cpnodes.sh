@@ -1,34 +1,36 @@
 
-if [ "$#" -ne 1 ]; then
-	echo "usage: $0 ARCH"
+if [ "$#" -lt 3 ]; then
+	echo "usage: $0 ARCH FOLDER LIBEXT"
 	exit 1
 fi
 
 ARCH=$1
+FOLDER=$2
+LIBEXT=$3
 
 echo "Cleaning $ARCH"
-rm -rf ~/$ARCH
+rm -rf $FOLDER/$ARCH
 
-mkdir ~/$ARCH
-mkdir ~/$ARCH/nodes
-mkdir ~/$ARCH/nodes/build
-mkdir ~/$ARCH/nodes/scripts
-mkdir ~/$ARCH/nodes/mongodb
+mkdir $FOLDER/$ARCH
+mkdir $FOLDER/$ARCH/nodes
+mkdir $FOLDER/$ARCH/nodes/build
+mkdir $FOLDER/$ARCH/nodes/scripts
+mkdir $FOLDER/$ARCH/nodes/mongodb
 
 get() {
-  cp ~/$1/$2 ~/$ARCH/$1
+  cp $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 getfolder() {
-  cp -r ~/$1/$2 ~/$ARCH/$1
+  cp -r $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 get nodes/build nodes
 get nodes/build nodesaggregate
-get nodes/build libStorageLib.so
+get nodes/build libStorageLib.$LIBEXT
 
 getfolder nodes scripts
 getfolder nodes mongodb
 
 # don't want this.
-rm ~/$ARCH/nodes/scripts/build.sh
+rm $FOLDER/$ARCH/nodes/scripts/build.sh

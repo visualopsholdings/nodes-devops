@@ -1,16 +1,17 @@
 
-if [ "$#" -ne 1 ]; then
-	echo "usage: $0 ARCH"
+if [ "$#" -lt 2 ]; then
+	echo "usage: $0 ARCH FOLDER"
 	exit 1
 fi
 
 ARCH=$1
+FOLDER=$2
 
-rm -rf ~/$ARCH/nodes-lib
-mkdir ~/$ARCH/nodes-lib
+rm -rf $FOLDER/$ARCH/nodes-lib
+mkdir $FOLDER/$ARCH/nodes-lib
 
 get() {
-  cp $1 ~/$ARCH/$2
+  cp $1 $FOLDER/$ARCH/$2
 }
 
 getboost() {

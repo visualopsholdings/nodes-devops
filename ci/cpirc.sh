@@ -1,22 +1,23 @@
 
-if [ "$#" -ne 1 ]; then
-	echo "usage: $0 ARCH"
+if [ "$#" -lt 2 ]; then
+	echo "usage: $0 ARCH FOLDER"
 	exit 1
 fi
 
 ARCH=$1
+FOLDER=$2
 
-rm -rf ~/$ARCH/nodes-irc
-mkdir ~/$ARCH/nodes-irc
-mkdir ~/$ARCH/nodes-irc/build
-mkdir ~/$ARCH/nodes-irc/scripts
+rm -rf $FOLDER/$ARCH/nodes-irc
+mkdir $FOLDER/$ARCH/nodes-irc
+mkdir $FOLDER/$ARCH/nodes-irc/build
+mkdir $FOLDER/$ARCH/nodes-irc/scripts
 
 get() {
-  cp ~/$1/$2 ~/$ARCH/$1
+  cp $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 getfolder() {
-  cp -r ~/$1/$2 ~/$ARCH/$1
+  cp -r $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 get nodes-irc/build nodes-irc
@@ -24,4 +25,4 @@ get nodes-irc/build nodes-irc
 getfolder nodes-irc scripts
 
 # don't want this.
-rm ~/$ARCH/nodes-irc/scripts/build.sh
+rm $FOLDER/$ARCH/nodes-irc/scripts/build.sh

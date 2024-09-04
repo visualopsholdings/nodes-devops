@@ -1,22 +1,23 @@
 
-if [ "$#" -ne 1 ]; then
-	echo "usage: $0 ARCH"
+if [ "$#" -lt 2 ]; then
+	echo "usage: $0 ARCH FOLDER"
 	exit 1
 fi
 
 ARCH=$1
+FOLDER=$2
 
-rm -rf ~/$ARCH/nodes-web
-mkdir ~/$ARCH/nodes-web
-mkdir ~/$ARCH/nodes-web/build
-mkdir ~/$ARCH/nodes-web/scripts
+rm -rf $FOLDER/$ARCH/nodes-web
+mkdir $FOLDER/$ARCH/nodes-web
+mkdir $FOLDER/$ARCH/nodes-web/build
+mkdir $FOLDER/$ARCH/nodes-web/scripts
 
 get() {
-  cp ~/$1/$2 ~/$ARCH/$1
+  cp $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 getfolder() {
-  cp -r ~/$1/$2 ~/$ARCH/$1
+  cp -r $FOLDER/$1/$2 $FOLDER/$ARCH/$1
 }
 
 get nodes-web/build nodes-web
@@ -26,4 +27,4 @@ getfolder nodes-web ssl
 getfolder nodes-web frontend
 
 # don't want this.
-rm ~/$ARCH/nodes-web/scripts/build.sh
+rm $FOLDER/$ARCH/nodes-web/scripts/build.sh

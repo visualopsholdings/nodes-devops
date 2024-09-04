@@ -12,16 +12,13 @@ else
   FOLDER=~
 fi
 
-./cpnodes.sh $ARCH $FOLDER so
+./cpnodes.sh $ARCH $FOLDER dylib
 [ "$?" != "0" ] && exit 1
 
 ./cpweb.sh $ARCH $FOLDER
 [ "$?" != "0" ] && exit 1
 
 ./cpirc.sh $ARCH $FOLDER
-[ "$?" != "0" ] && exit 1
-
-./cplibs.sh $ARCH $FOLDER
 [ "$?" != "0" ] && exit 1
 
 pushd $FOLDER
