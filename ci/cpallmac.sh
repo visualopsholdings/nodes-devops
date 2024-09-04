@@ -21,6 +21,9 @@ fi
 ./cpirc.sh $ARCH $FOLDER
 [ "$?" != "0" ] && exit 1
 
+./cplibsmac.sh $ARCH $FOLDER
+[ "$?" != "0" ] && exit 1
+
 pushd $FOLDER
 tar czf $ARCH.tgz $ARCH
 popd
