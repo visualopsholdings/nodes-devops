@@ -207,7 +207,7 @@ nodes-web/scripts/nginxconf.sh nodes.visualops.com 443 80
 
 Or whatever your domain is.
 
-After this you can visit "nodes" on the web. To login, use the VID 
+After this you can visit "nodes" on the web https://nodes.visualops.com/apps/login To login, use the VID 
 
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz

@@ -281,7 +281,7 @@ You can stop it with this:
 sudo nginx -s stop
 ```
 
-After this you can visit "nodes" on the web with https://pi.visualops.com. To login, use the VID 
+After this you can visit "nodes" on the web with https://pi.visualops.com/apps/login. To login, use the VID 
 
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
