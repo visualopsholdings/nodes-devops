@@ -12,6 +12,7 @@
 		<string>28365AFB-ABC4-4119-BC7E-17986D4C5357</string>
 		<string>59666050-E7E5-4D7E-9056-81C7951DB695</string>
 		<string>F27EB930-695B-4A50-9A81-D74CEAA6E1DF</string>
+		<string>6BB98DAA-8B19-411D-96F7-A2E019CCDC9B</string>
 	</array>
 	<key>ProjectItems</key>
 	<dict>
@@ -150,6 +151,53 @@
 			<string>README.md</string>
 			<key>ItemType</key>
 			<string>FileReference</string>
+			<key>UserOverrideItemName</key>
+			<true/>
+		</dict>
+		<key>6BB98DAA-8B19-411D-96F7-A2E019CCDC9B</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va9QCAAAAAAQQMAAAAPEtl6I5E7+dz5kVmfjhpKhL
+				iHUrRRnhjfdzzrw038Tw0AEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAEAAAAAQEAAHBhdWwDAAAAAQEA
+				AERldgAMAAAAAQEAAG5vZGVzLWRldm9wcwMAAAABAQAA
+				bWFjABQAAAABBgAAEAAAACAAAAAsAAAAOAAAAEwAAAAI
+				AAAABAMAAJo4AAAAAAAACAAAAAQDAADdyAMAAAAAAAgA
+				AAAEAwAAyZXZAwAAAAAIAAAABAMAAFbURAUAAAAACAAA
+				AAQDAACoBkUFAAAAABQAAAABBgAAdAAAAIQAAACUAAAA
+				pAAAALQAAAAIAAAAAAQAAEHGRAtcZd1GGAAAAAECAAAC
+				AAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMAAAMA
+				AAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxlOi8v
+				LwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAAAIcR
+				OQAAAAgAAAAABAAAQcX1BKwAAAAkAAAAAQEAAEYzRjBG
+				NUI4LTZBMTQtNDc4Qi04MDU2LUI2RTVFQUNEMTkyMBgA
+				AAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAA
+				AAEBAAAvAAAAAAAAAAEFAADMAAAA/v///wEAAAAAAAAA
+				EAAAAAQQAABYAAAAAAAAAAUQAADEAAAAAAAAABAQAADw
+				AAAAAAAAAEAQAADgAAAAAAAAAAIgAAC8AQAAAAAAAAUg
+				AAAsAQAAAAAAABAgAAA8AQAAAAAAABEgAABwAQAAAAAA
+				ABIgAABQAQAAAAAAABMgAABgAQAAAAAAACAgAACcAQAA
+				AAAAADAgAADIAQAAAAAAAAHAAAAQAQAAAAAAABHAAAAg
+				AAAAAAAAABLAAAAgAQAAAAAAABDQAAAEAAAAAAAAAA==
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/paul/Dev/nodes-devops/mac/</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./mac</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>mac</string>
+			<key>ItemType</key>
+			<string>FolderReference</string>
 			<key>UserOverrideItemName</key>
 			<true/>
 		</dict>
