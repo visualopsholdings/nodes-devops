@@ -4,7 +4,7 @@ You can use these steps to setup a runtime (or development) system for Nodes on 
 
 In fact I use a Macintosh to do the main development of the nodes project.
 
-## Prerequisits
+## Prerequisites
 
 For simplicity, create a "Dev" folder on your mac in your home folder.
 

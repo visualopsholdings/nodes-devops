@@ -12,7 +12,7 @@ that let's you use a shell to get to this and access the files that are in that 
 Since MongoDB doesn't work in the WSL, you run that seperately as a normal Windows process and access
 it remotely using the IP address of the host.
 
-## Prerequisits
+## Prerequisites
 
 ### WSL
 
