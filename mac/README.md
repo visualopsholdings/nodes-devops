@@ -64,7 +64,7 @@ https://www.mongodb.com/try/download/compass
 
 Run "MongoDB Compass".
 
-You can connect to the local database by creatig a new connection and taking the default.
+You can connect to the local database by creating a new connection and taking the default.
 
 Click "Open MongoDB shell" for direct access to the mongo shell. 
 
