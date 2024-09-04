@@ -249,6 +249,8 @@ And type in a line at the end like this:
 We ship with a certificate (from letsencrypt) for pi.visualops.com which you can install with:
 
 ```
+sudo mkdir /etc/letsencrypt/archive
+sudo mkdir /etc/letsencrypt/live
 nodes-web/ssl/install-pi-cert.sh
 ```
 
