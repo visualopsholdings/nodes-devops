@@ -59,6 +59,19 @@ sudo mv nodes /etc/sudoers.d/
 sudo chown root:root /etc/sudoers.d/nodes
 ```
 
+If you didn't use "nodes" as your user, then change "nodes" above to be whatever user you have created.
+
+## .gitconfig
+
+Make sure your .gitconfig doesn't have anything wierd in it. It can be empty for now or you can
+just make sure your details are correct.
+
+```
+[user]
+      name = Paul Hamilton
+      email = paul@visualops.com
+```
+      
 ## Download THIS project and navigate to the ubuntu scripts.
 
 ```
