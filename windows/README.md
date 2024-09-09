@@ -217,7 +217,7 @@ the advanced settings.
 Now that everything starts up, you want to be able to access nodes from the browser and there
 are a few steps still to do.
 
-You will want to set it up so that you can type "https://pi.visualops.com" in your local
+You will want to set it up so that you can type "https://local.visualops.com" in your local
 browser and it will access the web server with a certificate and do SSL.
 
 Find the IP address of your WSL:
@@ -243,27 +243,27 @@ C:\Windows\System32\drivers\etc\hosts
 And type in a line at the end like this:
 
 ```
-172.20.69.63 pi.visualops.com
+172.20.69.63 local.visualops.com
 ```
 
-We ship with a certificate (from letsencrypt) for pi.visualops.com which you can install with:
+We ship with a certificate (from letsencrypt) for local.visualops.com which you can install with:
 
 ```
 sudo mkdir /etc/letsencrypt/archive
 sudo mkdir /etc/letsencrypt/live
-nodes-web/ssl/install-pi-cert.sh
+nodes-web/ssl/install-local-cert.sh
 ```
 
 You can now create a config for nginx like this:
 
 ```
-nodes-web/scripts/nginxconf.sh pi.visualops.com 443 80
+nodes-web/scripts/nginxconf.sh local.visualops.com 443 80
 ```
 
 And now you can startup nodes and nodes-web like this:
 
 ```
-nodes/scripts/start.sh nodes nodes pi.visualops.com 10.0.0.27
+nodes/scripts/start.sh nodes nodes local.visualops.com 10.0.0.27
 nodes-web/scripts/start.sh
 ```
 
@@ -281,7 +281,7 @@ You can stop it with this:
 sudo nginx -s stop
 ```
 
-After this you can visit "nodes" on the web with https://pi.visualops.com/apps/login. To login, use the VID 
+After this you can visit "nodes" on the web with https://local.visualops.com/apps/login. To login, use the VID 
 
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz

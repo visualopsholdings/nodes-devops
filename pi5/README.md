@@ -163,9 +163,9 @@ cd ../..
 ## Setup your PI so you can do SSL
 
 This is a little complicated to do, but to simplify things we've made it possible to setup
-your pi so you can visit "pi.visualops.com" locally and get a valid certificate.
+your pi so you can visit "local.visualops.com" locally and get a valid certificate.
 
-On your network you need to make the name pi.visualops.com point to 192.168.0.240 (or whatever
+On your network you need to make the name local.visualops.com point to 192.168.0.240 (or whatever
 your PI is). For now we are just going to edit your /etc/hosts file and put an entry in it.
 
 ```
@@ -175,13 +175,13 @@ sudo nano /etc/hosts
 And add this:
 
 ```
-192.168.0.240  pi.visualops.com
+192.168.0.240  local.visualops.com
 ```
 
 Now you can install a certificate that matches that (it's supplied):
 
 ```
-nodes-web/ssl/install-pi-cert.sh
+nodes-web/ssl/install-local-cert.sh
 ```
 
 ## Start everything up
@@ -189,14 +189,14 @@ nodes-web/ssl/install-pi-cert.sh
 You can now start them up:
 
 ```
-nodes/scripts/start.sh nodes nodes pi.visualops.com
+nodes/scripts/start.sh nodes nodes local.visualops.com
 nodes-web/scripts/start.sh
 nodes-irc/scripts/start.sh
 ```
 
 ## Hookup NGINX to Nodes stuff
 
-If you visit your domain with https://pi.visualops.com, you'll see a generic NGINX
+If you visit your domain with https://local.visualops.com, you'll see a generic NGINX
 welcome banner.
 
 There are HTML files that are used by nodes, and the nodes program is a HTTP server itself running on
@@ -207,7 +207,7 @@ file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts 
 will use this config file.
 
 ```
-nodes-web/scripts/nginxconf.sh pi.visualops.com 443 80
+nodes-web/scripts/nginxconf.sh local.visualops.com 443 80
 ```
 
 Or whatever your domain is.

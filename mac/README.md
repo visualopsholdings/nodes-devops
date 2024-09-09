@@ -103,7 +103,7 @@ brew install nginx
 brew services start nginx
 ```
 
-You will want to set it up so that you can type "https://pi.visualops.com" in your local
+You will want to set it up so that you can type "https://local.visualops.com" in your local
 browser and it will access the web server with a certificate and do SSL.
 
 ```
@@ -127,22 +127,22 @@ bbedit /etc/hosts
 And type in a line at the end like this:
 
 ```
-10.0.0.69 pi.visualops.com
+10.0.0.69 local.visualops.com
 ```
 
-We ship with a certificate (from letsencrypt) for pi.visualops.com which you can install with:
+We ship with a certificate (from letsencrypt) for local.visualops.com which you can install with:
 
 ```
 mkdir working
 sudo mkdir /etc/letsencrypt/archive
 sudo mkdir /etc/letsencrypt/live
-nodes-web/ssl/install-pi-cert.sh
+nodes-web/ssl/install-local-cert.sh
 ```
 
 You can now create a config for nginx like this:
 
 ```
-nodes-web/scripts/nginxconfmac.sh pi.visualops.com 443 80 `pwd`
+nodes-web/scripts/nginxconfmac.sh local.visualops.com 443 80 `pwd`
 ```
 
 That last argument is the folder where you are putting everything.
@@ -150,11 +150,11 @@ That last argument is the folder where you are putting everything.
 And now you can startup nodes and nodes-web like this:
 
 ```
-nodes/scripts/start.sh nodes nodes pi.visualops.com
+nodes/scripts/start.sh nodes nodes local.visualops.com
 nodes-web/scripts/start.sh
 ```
 
-After this you can visit "nodes" on the web with https://pi.visualops.com/apps/login. To login, use the VID 
+After this you can visit "nodes" on the web with https://local.visualops.com/apps/login. To login, use the VID 
 
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
