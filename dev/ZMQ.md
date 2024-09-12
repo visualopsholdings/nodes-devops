@@ -16,3 +16,10 @@ cd ~
 git clone https://github.com/visualopsholdings/nodes-devops
 nodes-devops/dev/zmq.sh
 ```
+
+Note on a Macintosh some of these scripts might get a quarantine bit set. So if you see
+"zsh: operation not permitted" you might run this:
+
+```
+xattr -d com.apple.quarantine nodes-devops/dev/zmq.sh
+```

@@ -22,3 +22,10 @@ On a linux you might need:
 ```
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
+
+Note on a Macintosh some of these scripts might get a quarantine bit set. So if you see
+"zsh: operation not permitted" you might run this:
+
+```
+xattr -d com.apple.quarantine nodes-devops/dev/mongo.sh
+```
