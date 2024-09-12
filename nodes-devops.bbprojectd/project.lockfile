@@ -11,20 +11,20 @@
 	<key>HostName</key>
 	<string>Paul’s Mac mini</string>
 	<key>LockDate</key>
-	<date>2024-09-05T01:20:36Z</date>
+	<date>2024-09-05T01:30:34Z</date>
 	<key>LockID</key>
-	<string>77B67D5A-AA23-47A4-8847-F5018A839DFE</string>
+	<string>73BC0FB0-106F-4C4E-9E81-050439600180</string>
 	<key>MarketingVersion</key>
 	<string>15.1.2</string>
 	<key>NetworkVolume</key>
 	<false/>
 	<key>ProcessIdentifier</key>
-	<integer>48373</integer>
+	<integer>1976</integer>
 	<key>UserName</key>
 	<string>paul</string>
 	<key>Version</key>
 	<integer>3</integer>
 	<key>VolumeIdentifier</key>
-	<string>7FB1C26A-236E-4EB0-A3D4-A2B760A32F4A</string>
+	<string>2E91F751-92E8-46A5-8F8F-CEED2030F179</string>
 </dict>
 </plist>
