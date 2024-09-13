@@ -1,11 +1,16 @@
 
 # Installing Boost 1.85.0 from source
 
-This has been tested in Ubuntu 24.04
+## Ubuntu 24.04 
+
+This has been tested:
 - AWS T4G, T2
 - Raspberry PI 4 and 5
+- WSL
 
-Copy over and run "boost.sh".
+On a VM:
+
+Copy over and run "boost.sh" with scp/ssh.
 
 If you are actually ON the machine where you want to run the script, check out
 the project:
@@ -23,4 +28,10 @@ Then:
 sudo -s
 ./b2 install threading=multi link=shared
 ^C
+```
+
+## Macintosh
+
+```
+brew install boost@1.85
 ```
