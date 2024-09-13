@@ -30,7 +30,7 @@ sudo -s
 ^C
 ```
 
-## Macintosh
+On a macintosh you can just use:
 
 ```
 brew install boost@1.85
