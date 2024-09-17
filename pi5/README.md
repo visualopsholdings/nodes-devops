@@ -105,6 +105,7 @@ Ok now we are all set to prepare this system for Nodes :-)
 Copy the ubuntu install script to your new Pi, logon to it and run the install script.
 
 ```
+git clone https://github.com/visualopsholdings/nodes-devops
 cd nodes-devops/ubuntu/24.04
 scp install.sh arm64-mongo.sh nodes@192.168.0.240:
 ssh nodes@192.168.0.240
