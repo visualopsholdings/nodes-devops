@@ -86,7 +86,7 @@ db.createUser(
 )
 ```
 
-Extract the initial DB contents inside WSL (so in the terminal in Visual Studio):
+Extract the initial DB contents:
 
 ```
 cd nodes/mongodb
