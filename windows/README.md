@@ -1,4 +1,4 @@
-# Windows 11
+# Windows
 
 You can use these steps to setup a runtime (or development) system for Nodes on a Windows 11
 machine.
