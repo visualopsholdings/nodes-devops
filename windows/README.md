@@ -1,6 +1,6 @@
 # Windows
 
-You can use these steps to setup a runtime (or development) system for Nodes on a Windows 11
+You can use these steps to setup a runtime (or development) system for Nodes on a Windows
 machine.
 
 The basic process is that all of the developed code is built in Ubuntu like all our other platforms
