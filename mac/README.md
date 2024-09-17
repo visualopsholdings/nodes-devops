@@ -12,6 +12,7 @@ From the command line you could do this with
 
 ```
 mkdir ~/Dev
+cd ~/Dev
 ```
 
 ## Download THIS project and navigate to the macintosh scripts.
