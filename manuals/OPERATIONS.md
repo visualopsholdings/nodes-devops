@@ -89,11 +89,7 @@ called "Welcome":
 
 ![Add admin to Tracy](images/add-admin-to-tracy.png)
 
-![Add Tracy to Admin](images/add-tract-to-admin.png)
-
-
-
-
+![Add Tracy to Admin](images/add-tracy-to-admin.png)
 
 ## Login to your server using the well known Admin key
 
