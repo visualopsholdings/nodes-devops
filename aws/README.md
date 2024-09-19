@@ -148,7 +148,7 @@ You can find the latest builds in our github, and eventually they will be create
 many platforms we might build for, but for now they are just for THIS specific platform in AWS.
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/aws-tg4-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/aws-tg4-ubuntu-24_04.tgz
 tar xzf aws-tg4-ubuntu-24_04.tgz
 mv aws-tg4-ubuntu-24_04/nodes-lib .
 mv aws-tg4-ubuntu-24_04/nodes .
@@ -160,7 +160,7 @@ rm -rf aws-tg4-ubuntu-24_04*
 Or for Intel
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/aws-t2-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/aws-t2-ubuntu-24_04.tgz
 tar xzf aws-t2-ubuntu-24_04.tgz
 mv aws-t2-ubuntu-24_04/nodes-lib .
 mv aws-t2-ubuntu-24_04/nodes .

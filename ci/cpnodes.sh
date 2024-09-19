@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 
 if [ "$#" -lt 3 ]; then
 	echo "usage: $0 ARCH FOLDER LIBEXT"

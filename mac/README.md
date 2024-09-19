@@ -29,7 +29,7 @@ You can find the latest builds in our github.
 ```
 brew install wget
 cd ~/Dev
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/mac-sonoma.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/mac-sonoma.tgz
 tar xzf mac-sonoma.tgz
 mv mac-sonoma/nodes-lib .
 mv mac-sonoma/nodes .

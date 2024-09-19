@@ -16,7 +16,7 @@ fi
 
 if [ ! -d $ARCH ];
 then
-  echo "use pullbin.sh first."
+  echo "use get-xxx.sh first."
   exit 1
 fi
 
