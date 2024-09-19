@@ -91,6 +91,12 @@ called "Welcome":
 
 ![Add Tracy to Admin](images/add-tracy-to-admin.png)
 
-## Login to your server using the well known Admin key
+![Tracy added](images/tracy-added.png)
+
+![Turn off admin for Admin](images/turn-off-admin-for-admin.png)
+
+![Remove Admin from Admin](images/remove-admin-from-admin.png)
+
+![Admin can't login](images/admin-cant-login.png)
 
 
