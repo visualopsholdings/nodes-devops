@@ -56,16 +56,22 @@ After you login you are presented with:
 
 ![Chat for Admin](images/chat-admin.png)
 
+### RESET the node
+
 On the top right menu, choose "Admin" and you will see:
 
 ![Reset Node](images/admin-reset-node.png)
 
 Now click "RESET NODE" and a new ID and security keys will be generated.
 
+### Create a new stream
+
 Now click on "Streams" on the left, then "ADD" and type in "Welcome" to create a new stream
 called "Welcome":
 
 ![Create new welcome stream](images/add-welcome-stream.png)
+
+### Editing security on a new stream
 
 After clicking "Ok" you will see the new stream appear, and you can now click the little "wheel"
 icon next to it to edit this stream.
@@ -81,9 +87,15 @@ shown.
 Now click the tick next to "Everybody" (which means ALL security) and you will see a new
 line appear in the security for this stream.
 
-Click "SAVE POLICY" and then click the "Allow stream to be shared..." checkbox and click "Save".
+Click "SAVE POLICY".
+
+### Setting a stream to allow sharing
+
+Click the "Allow stream to be shared..." checkbox and click "Save".
 
 ![Allow stream sharing](images/allow-stream-sharing.png)
+
+### Sharing a stream
 
 Now choose "Chat" on the far right menu to switch back to chat and you will see the Welcome stream,
 click that and then there is a little black "share" button at the top of the stream right in
@@ -93,6 +105,8 @@ the middle which you click and you will be presented with the share stream dialo
 
 The share link has actually already been copied to your clipboard, and if you were inviting people
 to the system you would email them this link.
+
+### Logging in as a new user with a share link
 
 ![Save Share Link](images/save-share-link.png)
 
@@ -113,6 +127,8 @@ the clipboard so you can just save it somewhere. Remmeber you will need this!!!!
 After you click "Continue" you will be in ready to go!
 
 "![Tracy is in](images/tracy-is-in.png)
+
+### Setting a new user to be an Admin
 
 But, as Tracy, a new user you can't actually do anything meaningful except chat to the person that invited you,
 in this case the default "Admin" user.
@@ -138,6 +154,8 @@ Now click "ADD" and tracy is a full fledged admin of the server.
 
 ![Tracy added](images/tracy-added.png)
 
+### Removing the default "Admin" user
+
 Now log out of the server and log back in as "Tracy" using the VID you saved away (that's why you 
 needed to save it).
 
@@ -162,6 +180,8 @@ Now if you log out and try to use the original VID you will be unable to log in.
 ![Admin can't login](images/admin-cant-login.png)
 
 Only "Tracy" can log on now.
+
+### Next steps
 
 Now you can send that link to other people you might want to chat with, and they can follow the same process
 to get a VID and securely chat with you.
