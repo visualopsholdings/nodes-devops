@@ -160,3 +160,7 @@ After this you can visit "nodes" on the web with https://local.visualops.com/app
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
 ```
+
+To setup the server, use this manual:
+
+[Operations manual](../manuals/OPERATIONS.md)

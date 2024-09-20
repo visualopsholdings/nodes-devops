@@ -216,4 +216,3 @@ Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
 To setup the server, use this manual:
 
 [Operations manual](../manuals/OPERATIONS.md)
-

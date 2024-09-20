@@ -38,3 +38,7 @@ machine using binary artifacts.
 
 To setup a development system, use the above first and then follow the steps in the github repo
 to install the various sources for the dependencies.
+
+# Manuals
+
+[Operations manual](manuals/OPERATIONS.md)
