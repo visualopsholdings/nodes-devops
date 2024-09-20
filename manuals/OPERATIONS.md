@@ -9,7 +9,7 @@ Rather than a user name and password like other systems, a single long string li
 
 Vk9m69J2RzcCcqIIgHgAMkMxOTg2MEYyRDlEQjVEREM1OTdGOTY5MjBGM0MwMzJCQkVCMTgxMzI3NTRFNEUx
 
-Is used a single access string to the system. VIDs can't be guessed and are too complicated
+Is used as a single access string to the system. VIDs can't be guessed and are too complicated
 and long to be written down and typed in, so it's necessary for a user to take the time to 
 save this away somewhere and upload it (which is a good thing).
 
