@@ -53,6 +53,7 @@ to do the remaining steps.
 
 Now make it simpler so you don't have to type a password when you sudo.
 
+Inside the WSL terminal:
 ```
 echo "nodes ALL=(ALL) NOPASSWD:ALL" > nodes
 sudo mv nodes /etc/sudoers.d/
@@ -74,6 +75,7 @@ just make sure your details are correct.
       
 ## Download THIS project and navigate to the ubuntu scripts.
 
+Inside the WSL terminal:
 ```
 git clone https://github.com/visualopsholdings/nodes-devops
 cd nodes-devops/ubuntu/24.04
@@ -83,6 +85,7 @@ cd nodes-devops/ubuntu/24.04
 
 You can install all the dependences with this command:
 
+Inside the WSL terminal:
 ```
 ./install-nomongo.sh
 ```
@@ -91,6 +94,7 @@ You can install all the dependences with this command:
 
 To use the build tools in nodes-web (for a full build), you will need a later version of node, which you can get here:
 
+Inside the WSL terminal:
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 . ~/.bashrc
@@ -102,9 +106,11 @@ nvm install v16.14
 
 You can find the latest builds in our github.
 
+Inside the WSL terminal:
 ```
 cd ~
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v.0.0.2/wsl-ubuntu-24_04.tgz
+
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/wsl-ubuntu-24_04.tgz
 tar xzf wsl-ubuntu-24_04.tgz
 mv wsl-ubuntu-24_04/nodes-lib .
 mv wsl-ubuntu-24_04/nodes .
@@ -148,6 +154,7 @@ change that.
 From inside Ubuntu in WSL, this command will show you the host address for your windows
 machine:
 
+Inside the WSL terminal:
 ```
 ip route show | grep -i default | awk '{ print $3}'
 ```
@@ -160,10 +167,12 @@ Now edit this file with visual studio:
 C:\\Program Files\MongoDB\Server\7.0\bin\mongod.cfg
 ```
 
-Find "bindIp: 127.0.0.1" and change it to "bindIp: 10.0.0.27"
+Find "bindIp: 127.0.0.1" and change it to "bindIp: 10.0.0.27". The 10.0.0.27 is the address that was returned in the
+command above.
 
 Now restart MongoDB using the windows powershell as Admin:
 
+Inside the Windows PowerShell:
 ```
 start-process powershell -verb runas
 ```
@@ -179,11 +188,18 @@ net start MongoDB
 
 #### Populate MongoDB
 
-Run "Compass" and down the bottom there is a dark blue window you can expand that gives you
-direct access to the mongo shell. 
+Run "Compass" and and connect to the database.
 
-Remember to change the connection string to your external
-address rather than localhost.
+Remember to change the connection string to your external address that you found in the previous step rather
+rather than localhost.
+
+If your external address of WSL was "10.0.0.27", then your connection string would be:
+
+```
+mongodb://10.0.0.27:27017/
+```
+
+Down the bottom there is a dark blue window you can expand that gives you direct access to the mongo shell. 
 
 Paste this in:
 
@@ -202,6 +218,7 @@ db.createUser(
 
 Extract the initial DB contents inside WSL (so in the terminal in Visual Studio):
 
+Inside the WSL terminal:
 ```
 cd nodes/mongodb
 tar xzf initial.tgz
@@ -209,6 +226,7 @@ tar xzf initial.tgz
 
 And then restore it into the DB in Windows (so in the powershell or command prompt in Windows):
 
+Inside the PowerShell:
 ```
 cd 'C:\Program Files\MongoDB\Server\7.0\bin'
 ./mongorestore --username=nodes --password=nodes --db=nodes --drop \\wsl.localhost\Ubuntu-22.04\home\nodes\nodes\mongodb\dump\fiveEstellas
@@ -235,6 +253,7 @@ browser and it will access the web server with a certificate and do SSL.
 
 Find the IP address of your WSL:
 
+Inside the WSL terminal:
 ```
 ifconfig
 ```
@@ -261,6 +280,7 @@ And type in a line at the end like this:
 
 We ship with a certificate (from letsencrypt) for local.visualops.com which you can install with:
 
+Inside the WSL terminal:
 ```
 sudo mkdir /etc/letsencrypt/archive
 sudo mkdir /etc/letsencrypt/live
@@ -269,12 +289,14 @@ nodes-web/ssl/install-local-cert.sh
 
 You can now create a config for nginx like this:
 
+Inside the WSL terminal:
 ```
 nodes-web/scripts/nginxconf.sh local.visualops.com 443 80
 ```
 
 And now you can startup nodes and nodes-web like this:
 
+Inside the WSL terminal:
 ```
 nodes/scripts/start.sh nodes nodes local.visualops.com 10.0.0.27
 nodes-web/scripts/start.sh
@@ -284,12 +306,14 @@ nodes-web/scripts/start.sh
 
 Now startup NGINX:
 
+Inside the WSL terminal:
 ```
 sudo nginx
 ```
 
 You can stop it with this:
 
+Inside the WSL terminal:
 ```
 sudo nginx -s stop
 ```
