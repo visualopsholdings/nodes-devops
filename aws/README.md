@@ -213,3 +213,7 @@ After this you can visit "nodes" on the web https://nodes.visualops.com/apps/log
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
 ```
 
+To setup the server, use this manual:
+
+[Operations manual](manuals/OPERATIONS.md)
+
