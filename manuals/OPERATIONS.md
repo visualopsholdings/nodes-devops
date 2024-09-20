@@ -67,36 +67,110 @@ called "Welcome":
 
 ![Create new welcome stream](images/add-welcome-stream.png)
 
+After clicking "Ok" you will see the new stream appear, and you can now click the little "wheel"
+icon next to it to edit this stream.
+
 ![Edit the welcome stream](images/edit-welcome.png)
+
+In the security panel you will see a button called "ADD TEAM". Click that and then you will be presented
+with a dialog where you can search for teams. Type "ev" and all the teams that have that in them will be
+shown.
 
 ![Add team security](images/add-team-security.png)
 
+Now click the tick next to "Everybody" (which means ALL security) and you will see a new
+line appear in the security for this stream.
+
+Click "SAVE POLICY" and then click the "Allow stream to be shared..." checkbox and click "Save".
+
 ![Allow stream sharing](images/allow-stream-sharing.png)
+
+Now choose "Chat" on the far right menu to switch back to chat and you will see the Welcome stream,
+click that and then there is a little black "share" button at the top of the stream right in
+the middle which you click and you will be presented with the share stream dialog.
 
 ![Share Link](images/share-link.png)
 
+The share link has actually already been copied to your clipboard, and if you were inviting people
+to the system you would email them this link.
+
 ![Save Share Link](images/save-share-link.png)
+
+For now you are going to use the menu to "LOGOUT", and then paste the entire link that is on your clipboard
+into the browser.
 
 ![Paste Share Link](images/paste-share-link.png)
 
+When you click enter you will be asked to type your full name, so do so.
+
 ![Enter full name](images/enter-full-name.png)
+
+Click "Login" and anothert dialog will be presented which provides you with your VID. It's already on
+the clipboard so you can just save it somewhere. Remmeber you will need this!!!!
 
 ![Save the VID](images/save-vid.png)
 
-![Tracy is in](images/tracy-is-in.png)
+After you click "Continue" you will be in ready to go!
+
+"![Tracy is in](images/tracy-is-in.png)
+
+But, as Tracy, a new user you can't actually do anything meaningful except chat to the person that invited you,
+in this case the default "Admin" user.
+
+You can see this if you choose "Admin" from the menu.
 
 ![Tracy locked down](images/tracy-locked-down.png)
 
+So now we log out and log back in as "Admin" using the original VID. Then go into Admin and find the
+"Tracy" user and click the "Admin" checkbox:
+
 ![Add admin to Tracy](images/add-admin-to-tracy.png)
+
+Click "Ok". The next step is to add "Tracy" to the "Admin" team so that tracy can see and edit everything.
+
+Click on "Teams" and then click the "Edit" icon on "Admin".
+
+Click on "ADD MEMBER" and type "tracy" in user search to find Tracy.
 
 ![Add Tracy to Admin](images/add-tracy-to-admin.png)
 
+Now click "ADD" and tracy is a full fledged admin of the server.
+
 ![Tracy added](images/tracy-added.png)
+
+Now log out of the server and log back in as "Tracy" using the VID you saved away (that's why you 
+needed to save it).
+
+Now you want to disable the original "Admin" user so that that default user can't log on to the server
+anymore.
+
+Choose "Admin" on the menu, click on "Users" and then edit "Admin" and turn off
+the "Admin" and "Active" flags.
 
 ![Turn off admin for Admin](images/turn-off-admin-for-admin.png)
 
+You also want to remove the "Admin" user from the "Admin" team, so click on "Teams", and
+click edit on the "Admin" team.
+
+Click the trash can next to the "Admin" member down the bottom and you will see that only
+"Tracy" is in the admin team.
+
 ![Remove Admin from Admin](images/remove-admin-from-admin.png)
 
+Now if you log out and try to use the original VID you will be unable to log in.
+
 ![Admin can't login](images/admin-cant-login.png)
+
+Only "Tracy" can log on now.
+
+Now you can send that link to other people you might want to chat with, and they can follow the same process
+to get a VID and securely chat with you.
+
+Remember to use a single stream to invite peopole at first just in case the link is leaked and others
+might log in. If they pretend to bne your friend they might not give a useful name and also when
+you engage with them in the chat inside the "Welcome" stream you will probably be able to tell they
+aren't valid.
+
+If they aren't valid, simple remove them from the "Everybody" team and delete them and the will ne kicked out.
 
 
