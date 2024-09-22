@@ -1,2 +1,2 @@
 
-ssh -i ~/vopsDev/build/awskey-sydney.pem visualops@irc.visualops.com
+ssh -i ~/vopsDev/build/awskey-sydney.pem visualops@nodesdev.visualops.com

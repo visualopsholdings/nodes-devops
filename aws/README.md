@@ -59,18 +59,34 @@ Now click the orange "Save rules" button and you will be able to use IRC with th
 You downloaded your keypair to a file on your hard drive. I downloaded mine to 
 "~/vopsDev/build/awskey-sydney.pem".
 
+For the purposes of the rest of this note:
+
+- SSHKEY = the SSH key you downloaded (~/vopsDev/build/awskey-sydney.pem)
+- HOST = the IP address of the VM (13.236.72.83)
+
+So I would do this:
+
+```
+export SSHKEY=~/vopsDev/build/awskey-sydney.pem
+export HOST=13.236.72.83
+```
+
 In your shell type this in:
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.236.72.83
+ssh -i $SSHKEY ubuntu@$HOST
 ```
 
-And your in :-)
+And your connected to your new VM :-)
 
 ## Navigate to where our scripts are for Ubuntu
 
+Do this on the machine you are working on, not the actual VM. If your on windows
+then it's easiest to install the WSL and do it from there:
+
 ```
-cd nodes-devops/ubuntu/24.04
+git clone https://github.com/visualopsholdings/nodes-devops
+cd nodes-devops
 ```
 
 ## Creating a new user
@@ -79,8 +95,14 @@ It's a really bad idea to just use the "ubuntu" or "root" or a predefined user f
 system. You want a brand new one. For all our scripts, our user is going to be "nodes".
 
 ```
-scp -i ~/vopsDev/build/awskey-sydney.pem prep-user.sh ubuntu@13.236.72.83:
-ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.236.72.83 "prep-user.sh"
+scp -i $SSHKEY ubuntu/24.04/prep-user.sh ubuntu@$HOST:
+ssh -i $SSHKEY ubuntu@$HOST "./prep-user.sh"
+```
+
+From now on, you will SSH to your new VM as:
+
+```
+ssh -i $SSHKEY nodes@$HOST
 ```
 
 ## Installing our dependencies
@@ -88,7 +110,8 @@ ssh -i ~/vopsDev/build/awskey-sydney.pem ubuntu@13.236.72.83 "prep-user.sh"
 Copy the scripts over we need:
 
 ```
-scp -i ~/vopsDev/build/awskey-sydney.pem *.sh ../../dev/*.sh nodes@13.236.72.83:
+ssh -i $SSHKEY nodes@$HOST "mkdir install"
+scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
 ```
 
 And run the initial scripts:
@@ -96,13 +119,13 @@ And run the initial scripts:
 For ARM:
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.236.72.83 "./arm64-mongo.sh && ./install.sh"
+ssh -i $SSHKEY nodes@$HOST "./install/arm64-mongo.sh && ./install/install.sh"
 ```
 
 Or for Intel:
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@13.236.72.83 "./x86-mongo.sh && ./install.sh"
+ssh -i $SSHKEY nodes@$HOST "./install/x86-mongo.sh && ./install/install.sh"
 ```
 
 ## setup a domain and a certificate for your server
@@ -115,21 +138,25 @@ you received.
 
 So in our GoDaddy (visualops), I created an A record that said:
 
+```
 A | nodes | 13.236.72.83 | 1/2 Hour TTL
-
-After this, I can access my server with:
-
-```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com
 ```
 
-Now to create a certificate you can ask certbot to create you one.
+*Note: the address above is whatever $HOST is set to. The IP address of your VM.
+
+Change "host" to be the DNS name now. You will also need a valid EMAIL address soon
+so set that too (don't use mine :-)
 
 ```
-sudo certbot --nginx --non-interactive --agree-tos --domains nodes.visualops.com --email admin@visualops.com
+export HOST=nodes@nodes.visualops.com
+export EMAIL=admin@visualops.com
 ```
 
-It's that easy. Make sure you put YOUR domain and a valid email address in. Don't use mine :-)
+After this, I can access my server with (where HOST is now the actual name):
+
+```
+ssh -i $SSHKEY $HOST
+```
 
 ## Download and build the projects
 
@@ -148,33 +175,29 @@ You can find the latest builds in our github, and eventually they will be create
 many platforms we might build for, but for now they are just for THIS specific platform in AWS.
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/aws-tg4-ubuntu-24_04.tgz
-tar xzf aws-tg4-ubuntu-24_04.tgz
-mv aws-tg4-ubuntu-24_04/nodes-lib .
-mv aws-tg4-ubuntu-24_04/nodes .
-mv aws-tg4-ubuntu-24_04/nodes-web .
-mv aws-tg4-ubuntu-24_04/nodes-irc .
-rm -rf aws-tg4-ubuntu-24_04*
+ssh -i $SSHKEY nodes@$HOST "./install/download-arm.sh"
 ```
 
 Or for Intel
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/aws-t2-ubuntu-24_04.tgz
-tar xzf aws-t2-ubuntu-24_04.tgz
-mv aws-t2-ubuntu-24_04/nodes-lib .
-mv aws-t2-ubuntu-24_04/nodes .
-mv aws-t2-ubuntu-24_04/nodes-web .
-mv aws-t2-ubuntu-24_04/nodes-irc .
-rm -rf aws-t2-ubuntu-24_04*
+ssh -i $SSHKEY nodes@$HOST "./install/download-intel.sh"
 ```
 
 That's it :-)
 
+## Create an SSL certificate
+
+Now to create a certificate you can ask certbot to create you one.
+
+```
+ssh -i $SSHKEY nodes@$HOST "./nodes-web/scripts/new-cert.sh $HOST admin@visualops.com
+```
+
 ## create the mongoDB database
 
 ```
-ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com "./mongo.sh"
+ssh -i $SSHKEY nodes@$HOST "./install/mongo.sh"
 ```
 
 ## Start everything up
@@ -182,7 +205,13 @@ ssh -i ~/vopsDev/build/awskey-sydney.pem nodes@nodes.visualops.com "./mongo.sh"
 You can now start them up:
 
 ```
-nodes/scripts/start.sh nodes nodes nodes.visualops.com
+ssh -i $SSHKEY nodes@$HOST
+```
+
+Replace [HOST] with your host name.
+
+```
+nodes/scripts/start.sh nodes nodes [HOST]
 nodes-web/scripts/start.sh
 nodes-irc/scripts/start.sh
 ```
@@ -202,7 +231,7 @@ file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts 
 will use this config file.
 
 ```
-nodes-web/scripts/nginxconf.sh nodes.visualops.com 443 80
+ssh -i $SSHKEY nodes@$HOST "nodes-web/scripts/nginxconf.sh $HOST 443 80"
 ```
 
 Or whatever your domain is.
