@@ -135,15 +135,13 @@ After this, I can access my server with (where HOST is now the actual name):
 ssh -i $SSHKEY $HOST
 ```
 
-## Installing our dependencies
+## Installing our software
 
 Copy the scripts over we need:
 
 ```
 scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
 ```
-
-## To just run all the stuff below you can type:
 
 For Intel:
 ```
