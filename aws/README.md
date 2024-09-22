@@ -147,13 +147,15 @@ scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
 
 For Intel:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/install-intel.sh $HOST $EMAIL"
+ssh -i $SSHKEY nodes@$HOST "./install/install-intel.sh $HOST $EMAIL v0.2.0"
 ```
 
 For ARM:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/install-arm.sh $HOST $EMAIL"
+ssh -i $SSHKEY nodes@$HOST "./install/install-arm.sh $HOST $EMAIL v0.2.0"
 ```
+
+The last argument is the name of the TAG where the build exists.
 
 After this you can visit "nodes" on the web https://nodes.visualops.com/apps/login To login, use the VID 
 
