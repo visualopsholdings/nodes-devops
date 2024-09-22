@@ -105,29 +105,6 @@ From now on, you will SSH to your new VM as:
 ssh -i $SSHKEY nodes@$HOST
 ```
 
-## Installing our dependencies
-
-Copy the scripts over we need:
-
-```
-ssh -i $SSHKEY nodes@$HOST "mkdir install"
-scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
-```
-
-And run the initial scripts:
-
-For ARM:
-
-```
-ssh -i $SSHKEY nodes@$HOST "./install/arm64-mongo.sh && ./install/install.sh"
-```
-
-Or for Intel:
-
-```
-ssh -i $SSHKEY nodes@$HOST "./install/x86-mongo.sh && ./install/install.sh"
-```
-
 ## setup a domain and a certificate for your server
 
 SSL is a necessary thing for Nodes. It is used by the Web and IRC interfaces and isn't optional.
@@ -158,85 +135,31 @@ After this, I can access my server with (where HOST is now the actual name):
 ssh -i $SSHKEY $HOST
 ```
 
-## Download and build the projects
+## Installing our dependencies
 
-At this point, if your building a development machine, you can replace this section with the instructions for 
-building nodes from source. But continue for a binary only build (if there is one).
-
-To build from source, visit each of these projects:
-
-- https://github.com/visualopsholdings/nodes
-- https://github.com/visualopsholdings/nodes-irc
-- https://github.com/visualopsholdings/nodes-web
-
-## Download and install the binary builds
-
-You can find the latest builds in our github, and eventually they will be created according to the
-many platforms we might build for, but for now they are just for THIS specific platform in AWS.
+Copy the scripts over we need:
 
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/download-arm.sh"
+scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
 ```
 
-Or for Intel
+## To just run all the stuff below you can type:
 
+For Intel:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/download-intel.sh"
-```
-
-That's it :-)
-
-## Create an SSL certificate
-
-Now to create a certificate you can ask certbot to create you one.
-
-```
-ssh -i $SSHKEY nodes@$HOST "./nodes-web/scripts/new-cert.sh $HOST admin@visualops.com
+ssh -i $SSHKEY nodes@$HOST "./install/install-intel.sh $HOST $EMAIL"
 ```
 
-## create the mongoDB database
-
+For ARM:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/mongo.sh"
+ssh -i $SSHKEY nodes@$HOST "./install/install-arm.sh $HOST $EMAIL"
 ```
-
-## Start everything up
-
-You can now start them up:
-
-```
-ssh -i $SSHKEY nodes@$HOST
-```
-
-Replace [HOST] with your host name.
-
-```
-nodes/scripts/start.sh nodes nodes [HOST]
-nodes-web/scripts/start.sh
-nodes-irc/scripts/start.sh
-```
-
-First 2 arguments are the dbname and password.
-
-## Hookup NGINX to Nodes stuff
-
-If you visit your domain with https://nodes.visualops.com (or whatever yours is), you'll see a generic NGINX
-welcome banner.
-
-There are HTML files that are used by nodes, and the nodes program is a HTTP server itself running on
-port 3000 that is meant to be "proxied" by nginx.
-
-There are template files and a script inside the build that will create an appropriate NGINX config
-file that you will put inside /etc/nginx/conf.d/default. Then when NGINX starts it
-will use this config file.
-
-```
-ssh -i $SSHKEY nodes@$HOST "nodes-web/scripts/nginxconf.sh $HOST 443 80"
-```
-
-Or whatever your domain is.
 
 After this you can visit "nodes" on the web https://nodes.visualops.com/apps/login To login, use the VID 
+
+*Note nodes.visualops.com would be your hostname in $HOST
+
+Use this as the VID.
 
 ```
 Vk9WNIdltNaXa0eOG9cAdmlzdWFsb3Bz
