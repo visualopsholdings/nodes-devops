@@ -10,6 +10,9 @@ fi
 ARCH=$1
 TAG=$2
 
+# cleanup
+rm -rf nodes-lib nodes nodes-web nodes-irc
+
 wget https://github.com/visualopsholdings/nodes-devops/releases/download/$TAG/$ARCH.tgz
 tar xzf $ARCH.tgz
 mv $ARCH/nodes-lib .

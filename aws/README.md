@@ -54,58 +54,7 @@ type in 6667, and then choose "0.0.0.0/0" in the field with the magnifying glass
 
 Now click the orange "Save rules" button and you will be able to use IRC with this server.
 
-## Logging onto your new instance
-
-You downloaded your keypair to a file on your hard drive. I downloaded mine to 
-"~/vopsDev/build/awskey-sydney.pem".
-
-For the purposes of the rest of this note:
-
-- SSHKEY = the SSH key you downloaded (~/vopsDev/build/awskey-sydney.pem)
-- HOST = the IP address of the VM (13.236.72.83)
-
-So I would do this:
-
-```
-export SSHKEY=~/vopsDev/build/awskey-sydney.pem
-export HOST=13.236.72.83
-```
-
-In your shell type this in:
-
-```
-ssh -i $SSHKEY ubuntu@$HOST
-```
-
-And your connected to your new VM :-)
-
-## Navigate to where our scripts are for Ubuntu
-
-Do this on the machine you are working on, not the actual VM. If your on windows
-then it's easiest to install the WSL and do it from there:
-
-```
-git clone https://github.com/visualopsholdings/nodes-devops
-cd nodes-devops
-```
-
-## Creating a new user
-
-It's a really bad idea to just use the "ubuntu" or "root" or a predefined user for your
-system. You want a brand new one. For all our scripts, our user is going to be "nodes".
-
-```
-scp -i $SSHKEY ubuntu/24.04/prep-user.sh ubuntu@$HOST:
-ssh -i $SSHKEY ubuntu@$HOST "./prep-user.sh"
-```
-
-From now on, you will SSH to your new VM as:
-
-```
-ssh -i $SSHKEY nodes@$HOST
-```
-
-## setup a domain and a certificate for your server
+## setup a domain for your server
 
 SSL is a necessary thing for Nodes. It is used by the Web and IRC interfaces and isn't optional.
 Luckily it's very easy to setup.
@@ -121,39 +70,50 @@ A | nodes | 13.236.72.83 | 1/2 Hour TTL
 
 *Note: the address above is whatever $HOST is set to. The IP address of your VM.
 
-Change "host" to be the DNS name now. You will also need a valid EMAIL address soon
-so set that too (don't use mine :-)
+You downloaded your keypair to a file on your hard drive. I downloaded mine to 
+"~/vopsDev/build/awskey-sydney.pem".
+
+Now setup some variables to make it easy:
 
 ```
-export HOST=nodes@nodes.visualops.com
+export SSHKEY=~/vopsDev/build/awskey-sydney.pem
+export HOST=nodes.visualops.com
 export EMAIL=admin@visualops.com
+export TAG=v0.2.0
 ```
 
-After this, I can access my server with (where HOST is now the actual name):
+The EMAIL is valid email address used when negotiating a new certificate
+The TAG is the name of the TAG where the build exists.
+
+## Logging onto your new instance
+
+You can type this and see what you have so far :-)
 
 ```
-ssh -i $SSHKEY $HOST
+ssh -i $SSHKEY ubuntu@$HOST
+```
+
+## Download and navigate to this project
+
+Do this on the machine you are working on, not the actual VM. If your on windows
+then it's easiest to install the WSL and do it from there:
+
+```
+git clone https://github.com/visualopsholdings/nodes-devops
+cd nodes-devops
 ```
 
 ## Installing our software
 
-Copy the scripts over we need:
-
-```
-scp -i $SSHKEY aws/*.sh ubuntu/24.04/*.sh nodes@$HOST:install
-```
-
 For Intel:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/install-intel.sh $HOST $EMAIL v0.2.0"
+aws/install-intel.sh $HOST $SSHKEY $EMAIL $TAG
 ```
 
 For ARM:
 ```
-ssh -i $SSHKEY nodes@$HOST "./install/install-arm.sh $HOST $EMAIL v0.2.0"
+aws/install-arm.sh $HOST $SSHKEY $EMAIL $TAG
 ```
-
-The last argument is the name of the TAG where the build exists.
 
 After this you can visit "nodes" on the web https://nodes.visualops.com/apps/login To login, use the VID 
 

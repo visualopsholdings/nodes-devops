@@ -31,4 +31,6 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades -fnoninteractive
 sudo gpasswd -a www-data nodes
 
 # here is where will put the deps.
-mkdir working
+if [ ! -d "working" ]; then
+  mkdir working
+fi
