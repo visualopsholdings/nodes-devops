@@ -42,3 +42,4 @@ to install the various sources for the dependencies.
 # Manuals
 
 [Operations manual](manuals/OPERATIONS.md)
+[IRC](manuals/IRC.md)
