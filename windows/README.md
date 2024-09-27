@@ -110,7 +110,7 @@ Inside the WSL terminal:
 ```
 cd ~
 
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/wsl-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.3.0/wsl-ubuntu-24_04.tgz
 tar xzf wsl-ubuntu-24_04.tgz
 mv wsl-ubuntu-24_04/nodes-lib .
 mv wsl-ubuntu-24_04/nodes .
