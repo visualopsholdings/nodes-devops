@@ -120,7 +120,7 @@ When you click enter you will be asked to type your full name, so do so.
 ![Enter full name](images/enter-full-name.png)
 
 Click "Login" and anothert dialog will be presented which provides you with your VID. It's already on
-the clipboard so you can just save it somewhere. Remmeber you will need this!!!!
+the clipboard so you can just save it somewhere. Remember you will need this!!!!
 
 ![Save the VID](images/save-vid.png)
 
@@ -187,10 +187,10 @@ Now you can send that link to other people you might want to chat with, and they
 to get a VID and securely chat with you.
 
 Remember to use a single stream to invite peopole at first just in case the link is leaked and others
-might log in. If they pretend to bne your friend they might not give a useful name and also when
+might log in. If they pretend to be your friend they might not give a useful name and also when
 you engage with them in the chat inside the "Welcome" stream you will probably be able to tell they
 aren't valid.
 
-If they aren't valid, simple remove them from the "Everybody" team and delete them and the will ne kicked out.
+If they aren't valid, simply remove them from the "Everybody" team and delete them and the will be kicked out.
 
 
