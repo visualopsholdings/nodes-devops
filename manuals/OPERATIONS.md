@@ -120,7 +120,7 @@ When you click enter you will be asked to type your full name, so do so.
 ![Enter full name](images/enter-full-name.png)
 
 Click "Login" and anothert dialog will be presented which provides you with your VID. It's already on
-the clipboard so you can just save it somewhere. Remmeber you will need this!!!!
+the clipboard so you can just save it somewhere. Remember you will need this!!!!
 
 ![Save the VID](images/save-vid.png)
 
