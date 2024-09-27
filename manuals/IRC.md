@@ -2,6 +2,11 @@
 
 This manual describes connecting to a Nodes server using an IRC client.
 
+## Prerequsists
+
+On the servers you are connecting to, you will need to make sure that the "Username"
+field is set to something which will become the NICK for that user.
+
 ## WeeChat
 
 ```
@@ -9,15 +14,10 @@ brew install weechat
 weechat
 ```
 
-### Prerequsists
-
-On the servers you are connecting to, you will need to make sure that the "Username"
-field is set to something which will become the NICK for that user.
-
-Our implementation uses port 6667 which is the default and SSL, so set those options.
-
-
 ### Adding a server and setting your VID
+
+Our implementation uses port 6667 which is the default and SSL, so set those options on your
+
 ```
 /server add whatever whatever.com/6667 -tls
 /set irc.server.whatever.password "Your VID"
