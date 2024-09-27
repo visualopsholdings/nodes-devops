@@ -26,6 +26,8 @@ cd nodes-devops/mac
 
 You can find the latest builds in our github.
 
+For Sonoma:
+
 ```
 brew install wget
 cd ~/Dev
@@ -36,6 +38,20 @@ mv mac-sonoma/nodes .
 mv mac-sonoma/nodes-web .
 mv mac-sonoma/nodes-irc .
 rm -rf mac-sonoma*
+```
+
+For Sequoia:
+
+```
+brew install wget
+cd ~/Dev
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.3.0/mac-sequoia.tgz
+tar xzf mac-sequoia.tgz
+mv mac-sequoia/nodes-lib .
+mv mac-sequoia/nodes .
+mv mac-sequoia/nodes-web .
+mv mac-sequoia/nodes-irc .
+rm -rf mac-sequoia*
 ```
 
 That's it :-)
