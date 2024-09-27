@@ -71,7 +71,11 @@ Ending arp-scan 1.10.0: 256 hosts scanned in 1.834 seconds (139.59 hosts/sec). 8
 And you can see the raspberry pi is at 192.168.0.240, so logon to it:
 
 ```
-ssh nodes@192.168.0.240
+export HOST=192.168.0.240
+```
+
+```
+ssh nodes@$HOST
 ```
 
 The first thing you want to do is to prevent anybody hacking your new Pi image, so you can
@@ -107,8 +111,8 @@ Copy the ubuntu install script to your new Pi, logon to it and run the install s
 ```
 git clone https://github.com/visualopsholdings/nodes-devops
 cd nodes-devops/ubuntu/24.04
-scp install.sh arm64-mongo.sh nodes@192.168.0.240:
-ssh nodes@192.168.0.240
+scp install.sh arm64-mongo.sh nodes@$HOST:
+ssh nodes@$HOST
 ./arm64-mongo.sh
 ./install.sh
 ```
@@ -122,7 +126,7 @@ You could also build the projects from scratch ON your PI but you will need an 8
 builds will happily run on a 2GB pi 5 (and even a 3 and 4 but we have yet to test that).
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.1.0/pi-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.3.0/pi-ubuntu-24_04.tgz
 tar xzf pi-ubuntu-24_04.tgz
 mv pi-ubuntu-24_04/nodes-lib .
 mv pi-ubuntu-24_04/nodes .

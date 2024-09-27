@@ -79,7 +79,7 @@ Now setup some variables to make it easy:
 export SSHKEY=~/vopsDev/build/awskey-sydney.pem
 export HOST=nodes.visualops.com
 export EMAIL=admin@visualops.com
-export TAG=v0.2.0
+export TAG=v0.3.0
 ```
 
 The EMAIL is valid email address used when negotiating a new certificate
