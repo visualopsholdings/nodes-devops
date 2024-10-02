@@ -93,7 +93,7 @@
 				<key>HasSecurityScope</key>
 				<true/>
 				<key>RelativePath</key>
-				<string>./features</string>
+				<string>../nodes-test/features</string>
 				<key>TypeID</key>
 				<string>_CFileLocator</string>
 				<key>Version</key>
