@@ -11,7 +11,7 @@
 sudo apt-get update
 sudo apt-get -y install g++ gcc make \
   memcached haproxy libkrb5-dev zip libmemcached-dev zlib1g-dev \
-  mongodb-org certbot python3-certbot-nginx python3-pip
+  mongodb-org certbot python3-certbot-nginx python3-pip net-tools
 
 sudo apt -y autoremove
 

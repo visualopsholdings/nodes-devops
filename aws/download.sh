@@ -10,6 +10,8 @@ fi
 ARCH=$1
 TAG=$2
 
+./stopall.sh
+
 # cleanup
 rm -rf nodes-lib nodes nodes-web nodes-irc
 
@@ -20,3 +22,5 @@ mv $ARCH/nodes .
 mv $ARCH/nodes-web .
 mv $ARCH/nodes-irc .
 rm -rf $ARCH*
+
+./startall.sh
