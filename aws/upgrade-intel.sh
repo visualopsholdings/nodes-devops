@@ -16,5 +16,8 @@ HOST=$1
 SSHKEY=$2
 TAG=$3
 
+# copy over the scripts we need.
+scp -i $SSHKEY aws/download.sh nodes@$HOST:install
+
 # Download our code from github
 ssh -i $SSHKEY nodes@$HOST "./install/download.sh aws-t2-ubuntu-24_04 $TAG"
