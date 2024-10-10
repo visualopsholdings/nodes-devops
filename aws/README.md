@@ -77,7 +77,7 @@ Now setup some variables to make it easy:
 
 ```
 export SSHKEY=~/vopsDev/build/awskey-sydney.pem
-export HOST=nodes.visualops.com
+export NODESHOST=nodes.visualops.com
 export EMAIL=admin@visualops.com
 export TAG=v0.4.0
 ```
@@ -90,7 +90,7 @@ The TAG is the name of the TAG where the build exists.
 You can type this and see what you have so far :-)
 
 ```
-ssh -i $SSHKEY ubuntu@$HOST
+ssh -i $SSHKEY ubuntu@$NODESHOST
 ```
 
 ## Download and navigate to this project
@@ -107,17 +107,17 @@ cd nodes-devops
 
 For Intel:
 ```
-aws/install-intel.sh $HOST $SSHKEY $EMAIL $TAG
+aws/install-intel.sh $NODESHOST $SSHKEY $EMAIL $TAG
 ```
 
 For ARM:
 ```
-aws/install-arm.sh $HOST $SSHKEY $EMAIL $TAG
+aws/install-arm.sh $NODESHOST $SSHKEY $EMAIL $TAG
 ```
 
 After this you can visit "nodes" on the web https://nodes.visualops.com/apps/login To login, use the VID 
 
-*Note nodes.visualops.com would be your hostname in $HOST
+*Note nodes.visualops.com would be your hostname in $NODESHOST
 
 Use this as the VID.
 
