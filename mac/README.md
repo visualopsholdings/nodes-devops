@@ -31,7 +31,7 @@ For Sequoia:
 ```
 brew install wget
 cd ~/Dev
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.4.0/mac-sequoia.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.5.0/mac-sequoia.tgz
 tar xzf mac-sequoia.tgz
 mv mac-sequoia/nodes-lib .
 mv mac-sequoia/nodes .

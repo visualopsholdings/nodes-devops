@@ -126,7 +126,7 @@ You could also build the projects from scratch ON your PI but you will need an 8
 builds will happily run on a 2GB pi 5 (and even a 3 and 4 but we have yet to test that).
 
 ```
-wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.3.0/pi-ubuntu-24_04.tgz
+wget https://github.com/visualopsholdings/nodes-devops/releases/download/v0.5.0/pi-ubuntu-24_04.tgz
 tar xzf pi-ubuntu-24_04.tgz
 mv pi-ubuntu-24_04/nodes-lib .
 mv pi-ubuntu-24_04/nodes .

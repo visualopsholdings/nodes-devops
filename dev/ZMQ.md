@@ -23,3 +23,30 @@ Note on a Macintosh some of these scripts might get a quarantine bit set. So if 
 ```
 xattr -d com.apple.quarantine nodes-devops/dev/zmq.sh
 ```
+
+# Solving "curve not available"
+
+This is usually due to a later version of ZMQ (4.3.5) on Ubuntu. The version you need
+to be running is 4.1.5.
+
+If you:
+
+```
+ls -al /usr/local/lib/libzmq
+```
+
+And you see anything other than:
+
+```
+libzmq.so.5 -> libzmq.so.5.0.1
+```
+
+Then you have the wrong version.
+
+Simply:
+
+```
+cd /usr/local/lib
+sudo rm libzmq.so.5
+sudo ln -s libzmq.so.5.0.1 libzmq.so.5
+```
