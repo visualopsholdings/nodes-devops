@@ -188,7 +188,7 @@ net start MongoDB
 
 #### Populate MongoDB
 
-Run "Compass" and and connect to the database.
+Run "Compass" and connect to the database.
 
 Remember to change the connection string to your external address that you found in the previous step rather
 rather than localhost.
@@ -231,7 +231,7 @@ Inside the PowerShell:
 cd 'C:\Program Files\MongoDB\Server\7.0\bin'
 ./mongorestore --username=nodes --password=nodes --db=nodes --drop \\wsl.localhost\Ubuntu-22.04\home\nodes\nodes\mongodb\dump\fiveEstellas
 ```
-*** This doesn't workj at the moment, we need to specificy the connectin string that we worked out above.
+*** This doesn't work at the moment, we need to specificy the connectin string that we worked out above.
 
 Conveniently, you can get to your WSL data from windows at this path (as seen above):
 
