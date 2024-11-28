@@ -25,6 +25,20 @@ and problems that plague IRC etc.
 
 This project implements an open source implementation of this in C++.
 
+## Differences between this open source project and commercial Visual Ops
+
+The open source project replicates a small subset of the features of Visual Ops. Missing from 
+this project but available in the commercial implementation are:
+
+- "Actions" 
+-- Messages can have "types" and rich form based controls for collaboration.
+-- A functional programming language called "f(lo)".
+-- unlimited UNDO of messages.
+- A full media system (image thumbnails, etc)
+- Tools for backing up, viewing logs and generally maintaining a server without needing to log 
+onto it with SSH.
+- Integrations that allow a server to talk to various other systems.
+
 ## Related Projects
 
 ### https://github.com/visualopsholdings/nodes
