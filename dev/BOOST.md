@@ -7,6 +7,7 @@ This has been tested:
 - AWS T4G, T2
 - Raspberry PI 4 and 5
 - WSL
+- Mac OS
 
 On a VM:
 
@@ -26,12 +27,6 @@ Then:
 ```
 # as root user
 sudo -s
-./b2 install threading=multi link=shared
+
 ^C
-```
-
-On a macintosh you can just use:
-
-```
-brew install boost@1.85
 ```
