@@ -27,6 +27,6 @@ Then:
 ```
 # as root user
 sudo -s
-
+./b2 install
 ^C
 ```
